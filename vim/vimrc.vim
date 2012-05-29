@@ -4,6 +4,9 @@
 let os = substitute(system('uname'), "\n", "", "")
 autocmd VimEnter * echo "Ready to work on" os
 
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 " Set font according to system
 "if MySys() == "mac"
 if os == "Darwin"
