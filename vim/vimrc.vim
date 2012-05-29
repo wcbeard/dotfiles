@@ -226,3 +226,15 @@ set directory=~/.vim/tmp
 "git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
 "git add .
 "git commit -m "Install Fugitive.vim bundle as a submodule."
+"screen -R
+"  Reattach to a previously detatched session
+"  Ctrl-a c
+"  Create a new window.
+"  Ctrl-a k
+"  Kill the current window - after confirmation
+"  Ctrl-a Ctrl-a
+"  Switch to the other window
+"  Ctrl-a S
+"  Split the current window in two.
+"  Ctrl-a TAB
+"  Move between split sections of the screen.
