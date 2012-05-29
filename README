@@ -1,8 +1,8 @@
-https://raw.github.com/nelstrom/dotvim/master/README
+From https://raw.github.com/nelstrom/dotvim/master/README
 
 Installation:
 
-    git clone git://github.com/d10genes/dotvim.git ~/.vim
+    git clone git://github.com/d10genes/dotfiles.git ~/.vim
 
 Create symlinks:
 
