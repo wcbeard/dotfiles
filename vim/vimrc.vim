@@ -223,3 +223,6 @@ set directory=~/.vim/tmp
 
 " kill ring plugin http://www.vim.org/scripts/script.php?script_id=1234
   " view register contents- :reg
+"git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
+"git add .
+"git commit -m "Install Fugitive.vim bundle as a submodule."
