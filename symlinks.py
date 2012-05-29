@@ -20,19 +20,16 @@ def sym_names(f_path):
     """Returns tuple of existing filename (fname) and filename of symlink.
     'fname' -> '.fname'; 'fname,' -> 'fname'; 'fname,foo' -> 'foo'
     """
-    pf = f_path.split('/') # ['vi', 'vim', 'vimrc']
+    pf = f_path.split('/') 
     f = pf.pop() 
-    pf = '/'.join(pf) # 'vi/vim'
+    pf = '/'.join(pf) 
     base_f = f.split(',')
     orig = '/'.join([pf, base_f[0]]).lstrip('/')
     if f == base_f[0]:
-        # base_f = ['bashrc']
         return (orig, '.' + base_f[0])
     elif not base_f[1]:
-        # base_f = ['bashrc', '']
         return (orig, base_f[0])
     else: 
-        # base_f = ['bashrc', 'bashrc2']
         return (orig, base_f[1])
 
 bases = [sym_names(b) for b in bases]
@@ -45,7 +42,6 @@ for fs in files:
     if not os.path.exists(orig_p):
         print "File %s doesn't exist!" % orig_p
     else:
-        # src, d = orig_p, os.path.join(home, 'Desktop/dt/', dest)
         src, d = orig_p, os.path.join(home, dest)
         force_symlink(src, d)
         print '%s @-> %s' % (d, src)
