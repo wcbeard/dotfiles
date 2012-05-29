@@ -1,0 +1,17 @@
+ed in command prompt
+    NM="\[\033[0;38m\]" #means no background and white lines
+    HI="\[\033[0;37m\]" #change this for letter colors
+    HII="\[\033[0;31m\]" #change this for letter colors
+    SI="\[\033[0;33m\]" #this is for the current directory
+    IN="\[\033[0m\]"
+
+    ## Command Prompt ##
+    if [ ${USER} == "root" ];then
+        export PS1="$HII\w$NM $ $IN"
+    fi
+
+    if [ ${USER} == "myUserName" ];then
+        #export PS1="$SI\w$NM $ $IN"
+        export PS1="$SI\w$NM $ $IN"
+    fi
+  

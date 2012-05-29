@@ -1,0 +1,1167 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"au",
+				"author"
+			],
+			[
+				"gl",
+				"global"
+			],
+			[
+				"kw",
+				"kwargs"
+			],
+			[
+				"coacl",
+				"coauth_class"
+			],
+			[
+				"coc",
+				"coauth_classL"
+			],
+			[
+				"tra",
+				"train_dat"
+			],
+			[
+				"coau",
+				"coauth"
+			],
+			[
+				"norm",
+				"normalize"
+			],
+			[
+				"tim",
+				"timeit"
+			],
+			[
+				"auth",
+				"author_ind"
+			],
+			[
+				"Prec",
+				"Prec"
+			],
+			[
+				"winsz",
+				"win_size"
+			],
+			[
+				"gr",
+				"group_size"
+			],
+			[
+				"unr",
+				"unreachables"
+			],
+			[
+				"lea",
+				"leaders"
+			],
+			[
+				"rd",
+				"ready_leader"
+			],
+			[
+				"rea",
+				"ready_leader"
+			],
+			[
+				"ex",
+				"explored"
+			],
+			[
+				"un",
+				"unexplored_child"
+			],
+			[
+				"r",
+				"read"
+			],
+			[
+				"pt",
+				"print"
+			],
+			[
+				"ne",
+				"next_col"
+			],
+			[
+				"nex",
+				"next_lane"
+			],
+			[
+				"tr1",
+				"test_road1"
+			],
+			[
+				"cl",
+				"class_name"
+			],
+			[
+				"Om",
+				"Omega"
+			],
+			[
+				"exp",
+				"expansion"
+			],
+			[
+				"omg",
+				"Omega"
+			],
+			[
+				"di",
+				"dimy"
+			],
+			[
+				"mnse",
+				"motion_noise"
+			],
+			[
+				"sp",
+				"spath"
+			],
+			[
+				"mega",
+				"megaDoc"
+			],
+			[
+				"class",
+				"classifier"
+			],
+			[
+				"meg",
+				"megaDoc"
+			],
+			[
+				"initia",
+				"initialization"
+			],
+			[
+				"lg",
+				"logprobs"
+			],
+			[
+				"wo",
+				"word"
+			],
+			[
+				"lo",
+				"logprobs"
+			],
+			[
+				"cb",
+				"cond_prob"
+			],
+			[
+				"me",
+				"megaDoc"
+			],
+			[
+				"def",
+				"defaultdict"
+			],
+			[
+				"r2_",
+				"r2_idx"
+			],
+			[
+				"r2",
+				"r2_idx"
+			],
+			[
+				"r1",
+				"r1_val"
+			],
+			[
+				"tri",
+				"tri_count"
+			],
+			[
+				"bg",
+				"bg_perplexity"
+			],
+			[
+				"tgm",
+				"tgmx"
+			],
+			[
+				"tg",
+				"tgmx"
+			],
+			[
+				"ng",
+				"ngram"
+			],
+			[
+				"tr",
+				"num_trigrams"
+			],
+			[
+				"sen",
+				"sentence_length"
+			],
+			[
+				"u",
+				"ug_perplexity"
+			],
+			[
+				"sent",
+				"sentence"
+			],
+			[
+				"wr",
+				"wrd3"
+			],
+			[
+				"w",
+				"wrd1"
+			],
+			[
+				"ran",
+				"rand_word"
+			],
+			[
+				"ge",
+				"get_frequency"
+			],
+			[
+				"g",
+				"get_trigram"
+			],
+			[
+				"fre",
+				"freq_count"
+			],
+			[
+				"pr",
+				"print"
+			],
+			[
+				"fr",
+				"freq_count"
+			],
+			[
+				"freq",
+				"frequency_word"
+			],
+			[
+				"cou",
+				"count_token_trigrams"
+			],
+			[
+				"trig",
+				"trigrams"
+			],
+			[
+				"pre",
+				"prev_word"
+			],
+			[
+				"prev",
+				"prev_token1"
+			],
+			[
+				"big",
+				"bigram_vocab_size"
+			],
+			[
+				"coun",
+				"count_gt"
+			],
+			[
+				"count",
+				"count_gt"
+			],
+			[
+				"uni",
+				"uni_total"
+			],
+			[
+				"seen",
+				"seen_n_times"
+			],
+			[
+				"gt",
+				"count_gt"
+			],
+			[
+				"bi",
+				"bigram_seen_n_times"
+			],
+			[
+				"tok",
+				"token"
+			],
+			[
+				"n_",
+				"n_count"
+			],
+			[
+				"n",
+				"n_count"
+			],
+			[
+				"n_cou",
+				"n_count1"
+			],
+			[
+				"n_c",
+				"n_count"
+			],
+			[
+				"star",
+				"start_smoothing"
+			],
+			[
+				"bigr",
+				"bigram_count"
+			],
+			[
+				"token",
+				"token_bigrams"
+			],
+			[
+				"vocab",
+				"vocab_size"
+			],
+			[
+				"qui",
+				"quick_sort"
+			],
+			[
+				"pri",
+				"print_flag"
+			],
+			[
+				"par",
+				"part_method"
+			],
+			[
+				"print",
+				"print_flag"
+			],
+			[
+				"fil",
+				"files"
+			],
+			[
+				"data",
+				"data_backup"
+			],
+			[
+				"part",
+				"partition"
+			],
+			[
+				"te",
+				"text_com"
+			],
+			[
+				"da",
+				"dash_pat"
+			],
+			[
+				"no",
+				"no_spc_phone"
+			],
+			[
+				"st",
+				"std_p"
+			],
+			[
+				"std",
+				"std_phone"
+			],
+			[
+				"ju",
+				"just_wrds"
+			],
+			[
+				"do",
+				"dot_general"
+			],
+			[
+				"dot",
+				"dot_sym"
+			],
+			[
+				"tex",
+				"text_e"
+			],
+			[
+				"pro",
+				"process_file"
+			],
+			[
+				"sy",
+				"system"
+			],
+			[
+				"figu",
+				"figure_text"
+			],
+			[
+				"im",
+				"imshow"
+			],
+			[
+				"fi",
+				"fish07"
+			],
+			[
+				"filter",
+				"filtered_image"
+			],
+			[
+				"smo",
+				"smoothed2"
+			],
+			[
+				"filt",
+				"filterd_image"
+			],
+			[
+				"grid",
+				"grid_size"
+			],
+			[
+				"gri",
+				"grid_size"
+			],
+			[
+				"fish",
+				"fish04"
+			],
+			[
+				"hi",
+				"hidden_size"
+			],
+			[
+				"hidd",
+				"hidden_str"
+			],
+			[
+				"dat",
+				"data_examples"
+			],
+			[
+				"iter",
+				"iter_hist"
+			],
+			[
+				"thetas",
+				"thetas_str"
+			],
+			[
+				"num",
+				"num_hidden_layers"
+			],
+			[
+				"outp",
+				"z_output"
+			],
+			[
+				"lay",
+				"layer_a"
+			],
+			[
+				"fpr",
+				"fprintf"
+			],
+			[
+				"Num",
+				"Num_grad"
+			],
+			[
+				"Thet",
+				"Theta_test"
+			],
+			[
+				"rp",
+				"rpt2"
+			],
+			[
+				"Righ",
+				"RightLane"
+			],
+			[
+				"aver",
+				"average_line_points"
+			],
+			[
+				"Ri",
+				"RightLane"
+			],
+			[
+				"predi",
+				"predicted_measurements"
+			],
+			[
+				"dist",
+				"distance_noise"
+			],
+			[
+				"dis",
+				"distance_noise"
+			],
+			[
+				"pred",
+				"predicted_measurements"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "bashrc",
+			"settings":
+			{
+				"buffer_size": 4839,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "symlinks.py",
+			"settings":
+			{
+				"buffer_size": 1189,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pret",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"codeint",
+				"SublimeCodeIntel: Reset"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"dis",
+				"SublimeLinter: Disable Background Linting"
+			],
+			[
+				"siab",
+				"SublimeLinter: Disable Background Linting"
+			],
+			[
+				"subl",
+				"SublimeLinter: Reset"
+			],
+			[
+				"sublime",
+				"SublimeLinter: Disable Background Linting"
+			],
+			[
+				"lint",
+				"SublimeLinter: Disable Background Linting"
+			],
+			[
+				"open",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"finder",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 602.0
+	},
+	"console":
+	{
+		"height": 153.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/FingerMan/Desktop/untitled.html",
+		"/Users/FingerMan/.vimrc",
+		"/Users/FingerMan/vimrc.v",
+		"/Users/FingerMan/vimrc.vim",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/project3/Authorship-Attribution/authorship_data.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/project3/code/plotter.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/code/plotter.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/code/raw_data.txt",
+		"/Users/FingerMan/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/code/test/StevenMann_pcd.txt",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/code/test/starner_pcd.txt",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/code/README",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/project3/code/test/StevenMann_pcd_pos.txt",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/project3/code/test/starner_pcd.txt",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/project3/code/test/StevenMann_pcd.txt",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/project3/code/test/lee_pcd.txt",
+		"/usr/local/Cellar/qscintilla2/2.6.1/lib/python/PyQt4/Qsci.so",
+		"/Users/FingerMan/Dropbox/Engineering/ece4580-computer vision/project/code/opencv/car_detection/Makefile",
+		"/Users/FingerMan/Dropbox/Engineering/cs-algorithms/ps/ps4/test3.txt",
+		"/Users/FingerMan/Dropbox/Engineering/cs-algorithms/ps/ps4/ex_rev.txt",
+		"/Users/FingerMan/Dropbox/Engineering/cs-algorithms/ps/ps4/scc.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa3-sentiment/python/NaiveBayes.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs-algorithms/ps/ps4/test4.txt",
+		"/Users/FingerMan/Dropbox/Engineering/cs-algorithms/ps/ps4/test1.txt",
+		"/Users/FingerMan/Dropbox/Engineering/cs-algorithms/ps/ps4/test2.txt",
+		"/Users/FingerMan/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/FingerMan/Dropbox/Engineering/cs-algorithms/ps/ps4/ex.txt",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/final/sim_bins.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/final/lane_change.py",
+		"/Users/FingerMan/Desktop/authorship code/marlow.txt",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/unit6/implement.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/unit6/confidence.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/unit6/online_slam.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/unit6/expand.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/unit6/params.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/unit6/cte.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/unit6/mat.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa3-sentiment/python/testy.py",
+		"/Users/FingerMan/Desktop/markov.py",
+		"/Applications/Python 3.1/Extras/Demo/scripts/markov.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa2-autocorrect-v1/python/CustomLanguageModel_gt.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa2-autocorrect-v1/python/fitter.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa2-autocorrect-v1/python/UniformLanguageModel.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa2-autocorrect-v1/python/Datum.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/serafim",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/python/re_test.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/python/test.txt",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/plotkin",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/jure",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/python/SpamLord.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/jurafsky",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/manning",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/jks",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/ullman",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/pal",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/subh",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/levoy",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/tim",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/ouster",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/dlwh",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/engler",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/fedkiw",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa1-spamlord-v3/data/dev/nick",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/porter.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/au.txt",
+		"/Users/FingerMan/.octaverc",
+		"/Users/FingerMan/Dropbox/Engineering/cs228-probabilistic graphical models/img/naive_class.dot",
+		"/Users/FingerMan/Dropbox/Engineering/cs228-probabilistic graphical models/img/intercaus.dot",
+		"/Users/FingerMan/Dropbox/Engineering/cs228-probabilistic graphical models/img/dot.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/ai-neural net/batch_project.m",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/ai-neural net/recover_data.m",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/ai-neural net/debugInitializeWeights.m",
+		"/Users/FingerMan/Desktop/Buffer/v.cpp",
+		"/Users/FingerMan/Dropbox/Engineering/ece4580-computer vision/project/code/opencv/video-proc/group_attempt/LaneDetect.cpp",
+		"/Users/FingerMan/Dropbox/Engineering/ece4580-computer vision/project/code/opencv/video-proc/group_attempt/main.cpp",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/unit3/final_hw.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/unit3/sensing_hw.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/unit3/circular_motion.py",
+		"/Users/FingerMan/Desktop/ai-neural net/rand_init_thetas.m",
+		"/Users/FingerMan/Desktop/ai-neural net/flatten_matrices.m",
+		"/Users/FingerMan/Desktop/ai-neural net/fmincg.m",
+		"/Users/FingerMan/Desktop/ai-neural net/sigmoidGradient.m",
+		"/Users/FingerMan/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/FingerMan/Desktop/ai-neural net/checkNNGradients.m",
+		"/Users/FingerMan/.emacs.d/FingerMan.org",
+		"/Users/FingerMan/.emacs.d/starter-kit-bindings.org",
+		"/Users/FingerMan/Desktop/ai-neural net/sigmoid.m",
+		"/Users/FingerMan/Library/Application Support/Sublime Text 2/Packages/Python/Python.sublime-build",
+		"/Users/FingerMan/Desktop/ai-project2/project/nn_project.m",
+		"/Users/FingerMan/Desktop/ai-project2/project/nnCostFunction.m",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/kalman_hw2.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/kalman_25.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/coconut_q2_2.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/localization_1_4.py",
+		"/Users/FingerMan/backup/rsyncbackup.config",
+		"/Users/FingerMan/.emacs.d/starter-kit-misc.org",
+		"/Users/FingerMan/.emacs.d/FingerMan.el",
+		"/Users/FingerMan/.emacs.d/starter-kit-org.org",
+		"/Users/FingerMan/backup/installed_list.py",
+		"/Users/FingerMan/backup/rsyncbackup.pl",
+		"/Users/FingerMan/backup/pip_freeze.txt",
+		"/Users/FingerMan/Dropbox/Engineering/cs373-programming robotic car/ps/move_q1_23.py",
+		"/Users/FingerMan/Desktop/abc.py",
+		"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/project1/code/dict_constructor.py"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"bash_profile",
+			"dot",
+			"nodot",
+			"dotf",
+			"nodotf",
+			"nodot",
+			"\"",
+			"json",
+			"starnAsh",
+			"starnMann",
+			"AC",
+			"starnMann",
+			"starnLee",
+			"leeSt",
+			"'",
+			"^h2 (.+)",
+			"dat",
+			"myclass",
+			"timeit",
+			"fold",
+			"nfold_xval",
+			"read_and",
+			"counter",
+			"backup_data",
+			"meth",
+			"sbv6",
+			"sbk6",
+			"sbv6",
+			"clf_data",
+			"vec_list",
+			"vec_l",
+			"train_data",
+			"dat.",
+			"dat",
+			"Extract",
+			"myclass",
+			"self",
+			"pos_vec",
+			"  +",
+			"(\\d) +",
+			"\\: (\\d)",
+			"  +",
+			"\\t",
+			"  +",
+			"\\: +",
+			"data_vector",
+			"log",
+			"normali",
+			"accurately",
+			"collectively|whether",
+			"collectively",
+			"u'collectively-RB': 1, u'within-IN'",
+			"however\\.+whether",
+			"however|whether",
+			"\\n\\n\\n+",
+			"^ ",
+			"pos",
+			"tree",
+			"treeb",
+			"Rec",
+			"fscores",
+			"([^\\n])\\n([^\\n])",
+			"([\\-])\\n([^\\n])",
+			"([^\\n])\\n([^\\n])",
+			"([\\-])\\n([^\\n])",
+			"([^\\n])\\n([^\\n])",
+			"([\\.\\!\\?])[ \\n]",
+			"([\\.\\!])[ \\n]",
+			"mem",
+			"points",
+			"err",
+			"status",
+			"defau",
+			"^\\|\\n",
+			"\\n\\|\\|\\|\\|",
+			"   ",
+			"\\t",
+			"    ",
+			"max",
+			"super+ctrl+shift",
+			"time.time() - start",
+			"data",
+			"mu =",
+			"measure",
+			"onlin",
+			"Xi.ex",
+			"expand",
+			"expand\nexpand",
+			"dim + 2",
+			" mu ",
+			"slam",
+			"slam(",
+			"data",
+			"measur",
+			"run",
+			"estimate",
+			"megadoc",
+			"megaD",
+			"Ndocs",
+			"cond_prob",
+			"cond_",
+			"nb.",
+			"(  )",
+			"(  )+",
+			"\\n+",
+			"\\n",
+			"(\\d)\\n+",
+			"(\\d) ",
+			"\n4",
+			"\n\\n",
+			"\\n",
+			"bgm",
+			"data",
+			"pl.",
+			"Vocab ",
+			"prev_token",
+			"self.total",
+			"tList",
+			"tSamples",
+			"model",
+			"bigramCounts",
+			"unigram",
+			"  ",
+			"\\W{2,}",
+			"\\s+",
+			"\\s",
+			"\\W{2,}",
+			"\\W{2}"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"'",
+			"``",
+			"<h2>\\1</h2>",
+			"<h2>\\1<\\\\h2>",
+			"<h2>\\1<\\h2>",
+			"|",
+			"\\1|",
+			":\\t\\1",
+			"|",
+			"\\t",
+			"\\n\\n",
+			"",
+			"\\1 \\2",
+			"\\2",
+			"\\1 \\2",
+			"\\2",
+			"\\1 \\2",
+			"\\1\\n",
+			"\\n",
+			"|",
+			"\\t",
+			"float(time.time() - start)",
+			"g",
+			"dim + 1",
+			"run2",
+			"classifier.",
+			"\\1\\1",
+			"\\n",
+			"\\n\\t",
+			"\\1\\n",
+			"\\1\\t",
+			" \\\\times ",
+			" \\times ",
+			"self.data",
+			"prev_token2",
+			"self.uni_total",
+			"y",
+			"x",
+			"bigram",
+			"    ",
+			" ",
+			"\\n",
+			" ",
+			"|",
+			"\\\\log",
+			"\\log",
+			"p_{\\1}",
+			"\\\\times",
+			"\\times",
+			" ",
+			" \\\\;",
+			" \\;",
+			"\\n",
+			"quick_sort_r",
+			"dot_general_edu",
+			"&",
+			"\\1",
+			"\\1-\\2-\\3",
+			"\\2",
+			"\\1",
+			"\\2",
+			"\\1",
+			"\\3",
+			"\\2",
+			"\\1",
+			"\\2",
+			"\\1",
+			"\\1@\\2",
+			"\\2",
+			"\\1",
+			"",
+			"\\2\n\\4",
+			"\\2\n\\3",
+			"\\2\n\\2",
+			"\\2\n\\1",
+			"\\2\n\\1@\\2.edu",
+			"\\2\n\\2",
+			"\\1",
+			"\\1@\\2.edu",
+			"\\n",
+			" ",
+			"\\n",
+			"",
+			"\\t",
+			"",
+			"|",
+			"\\t",
+			"\\n|",
+			"|",
+			" ",
+			"stupid",
+			"fucking",
+			"10",
+			"9",
+			"''",
+			"10",
+			"9",
+			"11",
+			"C",
+			"10",
+			"C#",
+			"8",
+			"9",
+			"D",
+			"7",
+			"8",
+			"6",
+			"7",
+			"D#",
+			"D",
+			"5",
+			"6",
+			"'C#'",
+			"4",
+			"5",
+			"C",
+			"3",
+			"4",
+			"3",
+			"4",
+			"'C#'",
+			"2",
+			"3",
+			"C",
+			"C#",
+			"D",
+			"D#",
+			"C"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "bashrc",
+					"settings":
+					{
+						"buffer_size": 4839,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3027,
+								3027
+							]
+						],
+						"settings":
+						{
+							"buffer_scroll_name": "04a886a6",
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2048.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "symlinks.py",
+					"settings":
+					{
+						"buffer_size": 1189,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								723,
+								723
+							]
+						],
+						"settings":
+						{
+							"buffer_scroll_name": "1dc334e6",
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"cl",
+				"classify.py"
+			],
+			[
+				"plot",
+				"plotter.py"
+			],
+			[
+				"",
+				"/Users/FingerMan/Dropbox/Engineering/ece4580-computer vision/ps/hw10/hw10_script.m"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"design",
+				"/Users/FingerMan/Dropbox/Engineering/cs212-Design of programs/design_u1.sublime-project"
+			],
+			[
+				"a",
+				"/Users/FingerMan/Dropbox/Engineering/ece6554-adaptive control/project/adaptive.sublime-project"
+			],
+			[
+				"",
+				"/Users/FingerMan/Dropbox/Engineering/cs6601-artificial intelligence/code/classify.sublime-project"
+			],
+			[
+				"brow",
+				"/Users/FingerMan/Dropbox/Engineering/cs262-languages/unit1/browser_u1.sublime-project"
+			],
+			[
+				"ada",
+				"/Users/FingerMan/Dropbox/Engineering/ece6554-adaptive control/project/adaptive.sublime-project"
+			],
+			[
+				"pcf",
+				"/Users/FingerMan/Dropbox/Engineering/cs-natural language processing/ps/pa5-pcfg-v2/pcfgrammar.sublime-project"
+			]
+		],
+		"width": 873.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 234.0,
+	"status_bar_visible": true
+}

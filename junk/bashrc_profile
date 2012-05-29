@@ -1,0 +1,31 @@
+# source ~/.bashrc
+
+#  # Add to the original path
+#     export PATH=/foo:/foo/bar:$PATH
+
+# #used in command prompt
+#     NM="\[\033[0;38m\]" #means no background and white lines
+#     HI="\[\033[0;37m\]" #change this for letter colors
+#     HII="\[\033[0;31m\]" #change this for letter colors
+#     SI="\[\033[0;33m\]" #this is for the current directory
+#     IN="\[\033[0m\]"
+
+#     ## Command Prompt ##
+#     if [ ${USER} == "root" ];then
+#         export PS1="$HII\w$NM $ $IN"
+#     fi
+
+#     if [ ${USER} == "myUserName" ];then
+#         #export PS1="$SI\w$NM $ $IN"
+#         export PS1="$SI\w$NM $ $IN"
+#     fi
+  
+# WMII_IS_RUNNING=`ps a | grep wmii | awk '/tty1/'`
+# if [ -n "$WMII_IS_RUNNING" ]; then
+#   PROMPT_COMMAND='dirs | wmiir write /client/sel/label'
+# fi
+
+# # ls color commands
+  
+# # export LS_COLORS='di=1;36:fi=0:ln=4;34:pi=5:so=4;5:bd=5:cd=5:or=4;91:mi=4;92:ex=35:*.rb=90'
+
