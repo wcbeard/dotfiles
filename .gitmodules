@@ -1,7 +1,6 @@
-[submodule "vim-fugitive"]
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim-ipython"]
-	path = vim-ipython
+[submodule "vim/bundle/ipython"]
+	path = vim/bundle/ipython
 	url = https://github.com/ivanov/vim-ipython.git
