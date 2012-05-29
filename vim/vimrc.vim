@@ -1,19 +1,5 @@
-"put in home
 "help from http://amix.dk/blog/post/160
-"Todo: set C-t to transpose, etc
 " space, tab in normal mode
-
-" zr, zm for folding
-"fun! MySys()
-"	return "windows"
-"endfun
-"set runtimepath+=~/Dropbox/vim
-"source ~/Dropbox/vim/vimrc.vim
-" On Windows, like this:
-"set runtimepath+=-\My\ Documents/My\ Dropbox/vim
-"source -\vimrc.vim
-"source $HOME\My Documents\My Dropbox\vim\vimrc.vim
-"set runtimepath+=$HOME/My\ Documents/My\ Dropbox/vim
 
 let os = substitute(system('uname'), "\n", "", "")
 autocmd VimEnter * echo "Ready to work on" os
@@ -223,6 +209,8 @@ set directory=~/.vim/tmp
 	" c-w gf: file under cursor
 " http://aymanh.com/a-collection-of-vim-tips
   " good tips like window, buffer management
+  " zr, zm for folding
+
 
 "Buffers
 "http://tnerual.eriogerg.free.fr/vimqrc.html
