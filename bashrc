@@ -6,23 +6,51 @@
 
 set completion-ignore-case on
 
-#  ==============
-#  ===AQUATERM===
-#  ==============
-# export GNUTERM='aqua'
+# http://stackoverflow.com/questions/394230/detect-the-os-from-a-bash-script
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+   platform='mac'
+elif [[ "$unamestr" == 'Linux' ]]; then
+   platform='linux'
+fi
 
-#  ===========================
-#  ===HOMEBREW AUTOCOMPLETE===
-#  ===========================
-source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+if [[ $platform == 'mac' ]]; then
+   #  ==============
+   #  ===AQUATERM===
+   #  ==============
+   # export GNUTERM='aqua'
+   
+   #  ===========================
+   #  ===HOMEBREW AUTOCOMPLETE===
+   #  ===========================
+   source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+   
+   #  =================
+   #  ===PYTHON-PATH===
+   #  =================
+   export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+   export PYTHONPATH="/usr/local/Cellar/python/2.7.2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:$PYTHONPATH"
+   export PYTHONPATH="/usr/local/Cellar/python/2.7.2/Frameworks/Python.framework/Versions/2.7/lib:$PYTHONPATH"
+   export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+   
+   export PATH=${PATH}:/Developer/SDKs/android-sdk-mac_86/tools
 
-#  =================
-#  ===PYTHON-PATH===
-#  =================
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
-export PYTHONPATH="/usr/local/Cellar/python/2.7.2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:$PYTHONPATH"
-export PYTHONPATH="/usr/local/Cellar/python/2.7.2/Frameworks/Python.framework/Versions/2.7/lib:$PYTHONPATH"
-export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+   # Something's f'd up
+   export MACOSX_DEPLOYMENT_TARGET=10.6
+   
+   #  ====================
+   #  ===SKIM MAN PAGES===
+   #  ====================
+   
+   manp()
+   {
+     man -t "${1}" | open -f -a Skim
+   }
+   
+elif [[ $platform == 'linux' ]]; then
+   alias ls='ls --color=auto'
+fi
 
 #  ================
 #  ===VIRTUALENV===
@@ -40,22 +68,9 @@ source /usr/local/bin/virtualenvwrapper.sh
 alias mkve26="mkvirtualenv --python=/usr/bin/python2.6"
 alias mkve27="mkvirtualenv --python=/usr/local/bin/python2.7"
 
-export PATH=${PATH}:/Developer/SDKs/android-sdk-mac_86/tools
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
 export PATH=/usr/local/share/python:$PATH
-
-# Something's f'd up
-export MACOSX_DEPLOYMENT_TARGET=10.6
-
-#  ====================
-#  ===SKIM MAN PAGES===
-#  ====================
-
-manp()
-{
-  man -t "${1}" | open -f -a Skim
-}
 
 #  =====================
 #  ===PROMPT FUNCTION===
