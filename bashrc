@@ -56,6 +56,7 @@ elif [[ $platform == 'linux' ]]; then
 # /usr/local/lib/python2.6/dist-packages/neo4django
    alias cd='pushd'
    alias pd='popd'
+   alias hm='cd /vagrant/'
 fi  
 
 #  ================
