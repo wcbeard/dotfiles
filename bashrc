@@ -53,7 +53,7 @@ if [[ $platform == 'mac' ]]; then
    alias pd='popd'
 elif [[ $platform == 'linux' ]]; then
    alias ls='ls --color=auto'
-" /usr/local/lib/python2.6/dist-packages/neo4django
+# /usr/local/lib/python2.6/dist-packages/neo4django
    alias cd='pushd'
    alias pd='popd'
 fi  
