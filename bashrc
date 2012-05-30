@@ -57,6 +57,7 @@ elif [[ $platform == 'linux' ]]; then
    alias cd='pushd'
    alias pd='popd'
    alias hm='cd /vagrant/'
+   export DJANGO_SETTINGS_MODULE="neo4django.tests.test_settings"
 fi  
 
 #  ================
