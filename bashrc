@@ -47,10 +47,16 @@ if [[ $platform == 'mac' ]]; then
    {
      man -t "${1}" | open -f -a Skim
    }
-   
+   # change cd to pushd
+   # http://tmsh.posterous.com/cd-as-pushd
+   alias cd='. ${HOME}/bin/cd'
+   alias pd='popd'
 elif [[ $platform == 'linux' ]]; then
    alias ls='ls --color=auto'
-fi
+
+   alias cd='pushd'
+   alias pd='popd'
+fi  
 
 #  ================
 #  ===VIRTUALENV===

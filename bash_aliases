@@ -22,7 +22,3 @@ alias duh='du -h'
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
 
-# change cd to pushd
-# http://tmsh.posterous.com/cd-as-pushd
-alias cd='. ${HOME}/bin/cd'
-alias pd='popd'
