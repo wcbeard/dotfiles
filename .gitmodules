@@ -4,3 +4,9 @@
 [submodule "vim/bundle/ipython"]
 	path = vim/bundle/ipython
 	url = https://github.com/ivanov/vim-ipython.git
+[submodule "vim/bundle/commandt"]
+	path = vim/bundle/commandt
+	url = git://github.com/wincent/Command-T.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = git://github.com/ervandew/supertab.git

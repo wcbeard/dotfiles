@@ -7,6 +7,10 @@ autocmd VimEnter * echo "Ready to work on" os
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
 " Set font according to system
 "if MySys() == "mac"
 if os == "Darwin"
@@ -125,8 +129,9 @@ if bufwinnr(1)
   map - <C-W>-
 endif
 
-" nnoremap <C-]> <C-W>w
-" nnoremap <C-[> <C-W>W
+"" This sometimes messes stuff up...
+"nnoremap <D-]> <C-W>w
+"nnoremap <D-[> <C-W>W
 
 "========Insert time and date====
 " http://tobym.posterous.com/vim-insert-date-and-time-directly
@@ -150,7 +155,7 @@ noremap <CR> o<Esc>
   
 nnoremap - g$
 " get rid of Google docs weird newline
-nnoremap <Leader>k :%s//\r/g
+" nnoremap <Leader>k :%s//\r/g
 
 	 " C-j should insert new line in normal mode (this slick solution doesn't do it at the point, but moves whole line down one) --from http://vim.wikia.com/wiki/Insert_newline_without_entering_insert_mode
 "nnoremap <C-J> ciW<CR><Esc>:if match( @", "^\\s*$") < 0<Bar>exec "norm P-$diw+"<Bar>endif<CR>
