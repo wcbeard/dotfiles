@@ -13,11 +13,15 @@ colorscheme inkpot
 "e scratch-buffer.txt
 "tabnew
 
+"Fullscreen
+if has('gui_macvim')
+	map <D-CR> :set invfu<CR>
+endif
+
 " Make sure the '<' and 'C' flags are not included in 'cpoptions', otherwise
 " <CR> would not be recognized.  See ":help 'cpoptions'".
 let s:cpo_save = &cpo
 set cpo&vim
-
 
 "
 " Global default options
