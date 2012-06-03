@@ -40,6 +40,10 @@ endif
 "nnoremap ,v :tabnew $MYVIMRC<CR>
 nnoremap ,v :tabnew ~/vimrc.vim<CR>
 set clipboard=unnamed
+nnoremap ,lk :NERDTree<CR>
+nnoremap ,nt :NERDTree<CR>
+
+filetype plugin indent on
 
 if has('gui_running')
     set guioptions-=T   " Get rid of toolbar "
