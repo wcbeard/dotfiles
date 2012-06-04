@@ -8,6 +8,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 au FileType python set omnifunc=pythoncomplete#Complete
+filetype plugin indent on
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
@@ -18,7 +19,7 @@ if os == "Darwin"
 	set shell=/bin/bash
 	"set transparency=10 "placed in /Applications/MacVim.app/Contents/Resources/vim/gvimrc
 	"set invmmta "placed in /Applications/MacVim.app/Contents/Resources/vim/gvimrc
-	nnoremap ,m :tabnew ~/.vim/plugin/vimacs-0.95.vim<CR>
+	" nnoremap ,m :tabnew ~/.vim/plugin/vimacs-0.95.vim<CR>
 	"colorscheme inkpot "placed in /Applications/MacVim.app/Contents/Resources/vim/gvimrc
 	let g:miniBufExplMapWindowNavVim = 1 
 	let g:miniBufExplMapWindowNavArrows = 1 
@@ -37,13 +38,14 @@ elseif MySys() == "windows"
 	colorscheme inkpot
 endif
 
+
 "nnoremap ,v :tabnew $MYVIMRC<CR>
 nnoremap ,v :tabnew ~/vimrc.vim<CR>
 set clipboard=unnamed
 nnoremap ,lk :NERDTree<CR>
 nnoremap ,nt :NERDTree<CR>
+nnoremap ,m :MRU<CR>
 
-filetype plugin indent on
 
 if has('gui_running')
     set guioptions-=T   " Get rid of toolbar "
@@ -90,13 +92,13 @@ fun! Tabnp()
       inoremap <C-p> <C-p>
       inoremap <C-n> <C-n>
 endfun
-noremap <Tab>e :call TabVimacs()<cr>
-noremap <Tab>p :call Tabnp()<cr>
+" noremap <Tab>e :call TabVimacs()<cr>
+" noremap <Tab>p :call Tabnp()<cr>
 
-fun! TabVimacs()
-      inoremap <C-p> <C-o>gk
-      inoremap <C-n> <C-o>gj
-endfun
+" fun! TabVimacs()
+"       inoremap <C-p> <C-o>gk
+"       inoremap <C-n> <C-o>gj
+" endfun
  
  imap jj <Esc>
  set keymap=dvorak 
@@ -121,7 +123,7 @@ set wildmode=longest:full "tab-complete does longest instead of 1st
 set wildmenu
 set ruler			" show the cursor position all the time
 set showcmd			" display incomplete commands
-
+set autochdir
 "========decrease/increase tabstop=======
 " http://www.ibm.com/developerworks/linux/library/l-vim-script-1/index.html
 nmap <silent> ]] :let &tabstop += 1 \| let &shiftwidth +=1<CR>
