@@ -1,6 +1,6 @@
 
 alias octave='octave -q'
-alias ipythonq='ipython qtconsole --colors=linux'
+alias ipythonq='ipython qtconsole --colors=linux pylab=inline'
 alias ipn='cd ~/Dropbox/ipython_notebooks/; ipython notebook'
 alias ls='ls $LS_OPTIONS -hF' #human readable, append character indicator
 alias ll='ls $LS_OPTIONS -lhF' 	# long listing format

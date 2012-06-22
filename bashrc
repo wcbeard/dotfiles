@@ -29,12 +29,12 @@ if [[ $platform == 'mac' ]]; then
    #  =================
    #  ===PYTHON-PATH===
    #  =================
-   export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
-   export PYTHONPATH="/usr/local/Cellar/python/2.7.2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:$PYTHONPATH"
-   export PYTHONPATH="/usr/local/Cellar/python/2.7.2/Frameworks/Python.framework/Versions/2.7/lib:$PYTHONPATH"
-   export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+   # export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+   # export PYTHONPATH="/usr/local/Cellar/python/2.7.2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:$PYTHONPATH"
+   # export PYTHONPATH="/usr/local/Cellar/python/2.7.2/Frameworks/Python.framework/Versions/2.7/lib:$PYTHONPATH"
+   # export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
    
-   export PATH=${PATH}:/Developer/SDKs/android-sdk-mac_86/tools
+   # export PATH=${PATH}:/Developer/SDKs/android-sdk-mac_86/tools
 
    # Something's f'd up
    export MACOSX_DEPLOYMENT_TARGET=10.6
