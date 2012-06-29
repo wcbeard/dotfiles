@@ -40,11 +40,7 @@ COMPLETION_WAITING_DOTS="true"
 export WORKON_HOME="$HOME/py-env"
 export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
 export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
-export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python"
 
-plugins=(git brew django pip screen sublime vagrant virtualenvwrapper)
-
-source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 # export PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
@@ -53,20 +49,6 @@ source $ZSH/oh-my-zsh.sh
 # User @ Host – working dir
 #export PS1="\u@\h\w$ "
 #export PS1="\u@\h\w: "
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -86,33 +68,6 @@ elif [[ "$unamestr" == 'Linux' ]]; then
 fi
 
 if [[ $platform == 'mac' ]]; then
-   #  ==============
-   #  ===AQUATERM===
-   #  ==============
-   # export GNUTERM='aqua'
-   
-   #  ===========================
-   #  ===HOMEBREW AUTOCOMPLETE===
-   #  ===========================
-   # source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
-   
-   #  =================
-   #  ===PYTHON-PATH===
-   #  =================
-   # export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
-   # export PYTHONPATH="/usr/local/Cellar/python/2.7.2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:$PYTHONPATH"
-   # export PYTHONPATH="/usr/local/Cellar/python/2.7.2/Frameworks/Python.framework/Versions/2.7/lib:$PYTHONPATH"
-   # export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
-   
-   # export PATH=${PATH}:/Developer/SDKs/android-sdk-mac_86/tools
-
-   # Something's f'd up
-   # export MACOSX_DEPLOYMENT_TARGET=10.6
-   
-   #  ====================
-   #  ===SKIM MAN PAGES===
-   #  ====================
-   
    manp()
    {
      man -t "${1}" | open -f -a Skim
@@ -122,6 +77,12 @@ if [[ $platform == 'mac' ]]; then
    # http://tmsh.posterous.com/cd-as-pushd
    # alias cd='. ${HOME}/bin/cd'
    alias pd='popd'
+
+   export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python"
+
+plugins=(git brew django pip screen sublime vagrant virtualenvwrapper)
+
+source $ZSH/oh-my-zsh.sh
 elif [[ $platform == 'linux' ]]; then
    # alias ls='ls --color=auto'
 # /usr/local/lib/python2.6/dist-packages/neo4django
@@ -131,15 +92,20 @@ elif [[ $platform == 'linux' ]]; then
    export DJANGO_SETTINGS_MODULE="neo4django.tests.test_settings"
 fi  
 
+
+plugins=(git brew django pip screen sublime vagrant virtualenvwrapper)
+
+source $ZSH/oh-my-zsh.sh
+
 #  ================
 #  ===VIRTUALENV===
 #  ================
 
 # http://j2labs.tumblr.com/post/2904859594/python-2-6-2-7-and-3-1-with-virtualenv
-export WORKON_HOME="$HOME/py-env"
-export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
-export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
-export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python"
+# export WORKON_HOME="$HOME/py-env"
+# export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
+# export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
+# export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python"
 # source /usr/local/share/python/virtualenvwrapper.sh
 # 
 # source $HOME/py-env/src/virtualenvwrapper/virtualenvwrapper.sh
