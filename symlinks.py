@@ -5,7 +5,8 @@ here = os.path.abspath('.')
 
 # Files to copy, comma-separated if the symlink will not be dotted version
 # of file.
-bases = ['bashrc', 'bash_aliases', 'bash_profile', 'screenrc', 'vim/vimrc', 'vim/gvimrc', 'vim/vimrc.vim,', 'vim', 'dir_colors']
+bases = ['bashrc', 'bash_aliases', 'bash_profile', 'screenrc', 'vim/vimrc', 'vim/gvimrc', 
+    'vim/vimrc.vim,', 'vim', 'dir_colors', 'ipython', 'Vagrantfile,', 'zshrc']
 
 def force_symlink(file1, file2):
     try:
