@@ -5,6 +5,20 @@
 #export PS1="\u@\h\w: "
 
 set completion-ignore-case on
+#  ================
+#  ===VIRTUALENV===
+#  ================
+
+# http://j2labs.tumblr.com/post/2904859594/python-2-6-2-7-and-3-1-with-virtualenv
+export WORKON_HOME="$HOME/py-env"
+export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
+export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
+
+# 
+# source $HOME/py-env/src/virtualenvwrapper/virtualenvwrapper.sh
+# alias mkve26="mkvirtualenv --system-site-packages --python=/usr/bin/python2.6"
+# alias mkve27="mkvirtualenv --system-site-packages --python=/usr/local/bin/python2.7"
+
 
 # http://stackoverflow.com/questions/394230/detect-the-os-from-a-bash-script
 platform='unknown'
@@ -37,7 +51,7 @@ if [[ $platform == 'mac' ]]; then
    # export PATH=${PATH}:/Developer/SDKs/android-sdk-mac_86/tools
 
    # Something's f'd up
-   export MACOSX_DEPLOYMENT_TARGET=10.6
+   # export MACOSX_DEPLOYMENT_TARGET=10.6
    
    #  ====================
    #  ===SKIM MAN PAGES===
@@ -47,12 +61,17 @@ if [[ $platform == 'mac' ]]; then
    {
      man -t "${1}" | open -f -a Skim
    }
+   alias hm='cd ~/Dropbox/Engineering/vagrant/'
    # change cd to pushd
    # http://tmsh.posterous.com/cd-as-pushd
    alias cd='. ${HOME}/bin/cd'
    alias pd='popd'
+
+   export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python"
+   source /usr/local/share/python/virtualenvwrapper.sh
+
 elif [[ $platform == 'linux' ]]; then
-   alias ls='ls --color=auto'
+   # alias ls='ls --color=auto'
 # /usr/local/lib/python2.6/dist-packages/neo4django
    alias cd='pushd'
    alias pd='popd'
@@ -60,18 +79,6 @@ elif [[ $platform == 'linux' ]]; then
    export DJANGO_SETTINGS_MODULE="neo4django.tests.test_settings"
 fi  
 
-#  ================
-#  ===VIRTUALENV===
-#  ================
-
-# http://j2labs.tumblr.com/post/2904859594/python-2-6-2-7-and-3-1-with-virtualenv
-export WORKON_HOME="$HOME/py-env"
-export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
-export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
-source /usr/local/bin/virtualenvwrapper.sh
-# source $HOME/py-env/src/virtualenvwrapper/virtualenvwrapper.sh
-# alias mkve26="mkvirtualenv --system-site-packages --python=/usr/bin/python2.6"
-# alias mkve27="mkvirtualenv --system-site-packages --python=/usr/local/bin/python2.7"
 
 alias mkve26="mkvirtualenv --python=/usr/bin/python2.6"
 alias mkve27="mkvirtualenv --python=/usr/local/bin/python2.7"
@@ -115,10 +122,16 @@ IN="\[\033[0m\]"
  
 # export PS1="$NM[ $HI\u $HII\h $SI\w$NM ] $IN"
  
-if [ "$TERM" != "dumb" ]; then
-    export LS_OPTIONS='--color=auto'
-    eval `dircolors ~/.dir_colors`
-fi
+# if [ "$TERM" != "dumb" ]; then
+#     export LS_OPTIONS='--color=auto'
+#     eval `dircolors ~/.dir_colors`
+# fi
+
+
+alias ls='ls $LS_OPTIONS -hF' #human readable, append character indicator
+alias ll='ls $LS_OPTIONS -lhF' 	# long listing format
+alias l='ls $LS_OPTIONS -lAhF'	# like -a (all) but not the implied . and ..
+alias la='ls -a'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
