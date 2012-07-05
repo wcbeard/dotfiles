@@ -42,6 +42,7 @@ export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
 export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
 
 
+
 # Customize to your needs...
 # export PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
 # Define how Bash prompt looks like:
@@ -80,15 +81,15 @@ if [[ $platform == 'mac' ]]; then
 
    export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python"
 
-plugins=(git brew django pip screen sublime vagrant virtualenvwrapper)
-
-source $ZSH/oh-my-zsh.sh
 elif [[ $platform == 'linux' ]]; then
    # alias ls='ls --color=auto'
 # /usr/local/lib/python2.6/dist-packages/neo4django
    alias cd='pushd'
    alias pd='popd'
    alias hm='cd /vagrant/'
+   export WORKON_HOME="/vagrant/vm-py-env"
+   export VIRTUALENVWRAPPER_LOG_DIR="/vagrant/vm-py-env"
+   export VIRTUALENVWRAPPER_HOOK_DIR="/vagrant/vm-py-env"
    export DJANGO_SETTINGS_MODULE="neo4django.tests.test_settings"
 fi  
 
@@ -96,6 +97,19 @@ fi
 plugins=(git brew django pip screen sublime vagrant virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
+
+# wk() {
+#   cd /vagrant/;
+#   cd "$*";
+#   workon "$*";
+# }
+
+wk() {
+  workon "$1" && cd /vagrant/ && cd "$1";
+}
+
+# compdef wk workon
+compdef workon wk
 
 #  ================
 #  ===VIRTUALENV===
