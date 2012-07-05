@@ -87,6 +87,7 @@ elif [[ $platform == 'linux' ]]; then
    alias cd='pushd'
    alias pd='popd'
    alias hm='cd /vagrant/'
+   alias subl='vim'
    export WORKON_HOME="/vagrant/vm-py-env"
    export VIRTUALENVWRAPPER_LOG_DIR="/vagrant/vm-py-env"
    export VIRTUALENVWRAPPER_HOOK_DIR="/vagrant/vm-py-env"
