@@ -76,6 +76,9 @@ elif [[ $platform == 'linux' ]]; then
    alias cd='pushd'
    alias pd='popd'
    alias hm='cd /vagrant/'
+   export WORKON_HOME="/vagrant/vm-py-env"
+   export VIRTUALENVWRAPPER_LOG_DIR="/vagrant/vm-py-env"
+   export VIRTUALENVWRAPPER_HOOK_DIR="/vagrant/vm-py-env"
    export DJANGO_SETTINGS_MODULE="neo4django.tests.test_settings"
 fi  
 

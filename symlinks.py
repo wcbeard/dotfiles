@@ -15,7 +15,7 @@ st_dir = 'Library/Application Support/Sublime Text 2/Packages/User' if ('darwin'
 # /Users/beard/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings
 bases = ['bashrc', 'bash_aliases', 'bash_profile', 'screenrc', 'vim/vimrc', 'vim/gvimrc', 
     'vim/vimrc.vim,vimrc.vim', 'vim', 'dir_colors', 'ipython', 'Vagrantfile,', 'zshrc',
-    'gitconfig', 'pentadactylrc', 'sublime-text-config,' + st_dir]
+    'gitconfig', 'pentadactylrc', 'sublime-text-config,' + st_dir, 'ghci']
 # 
 # def symlink(file1, file2, force=False):
 #     try:
