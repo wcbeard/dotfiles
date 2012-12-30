@@ -9,8 +9,10 @@ ZSH_THEME="robbyrussell"
 
 # Example aliases
 alias zshconfig="subl ~/.zshrc"
+alias slog="cd /Applications/Slogger && ./slogger"
 alias ohmyzsh="subl ~/.oh-my-zsh"
 alias bashconfig="subl ~/.bashrc"
+alias alsconfig="subl ~/.bash_aliases"
 
 alias la="ls -a"
 alias ll="ls -l"
@@ -41,7 +43,16 @@ export WORKON_HOME="$HOME/py-env"
 export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
 export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
 
+# http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/SettingUp_CommandLine.html
+export EC2_HOME=/usr/local/ec2-ami-tools-1.4.0.7/
+export EC2_HOME=/usr/local/ec2-api-tools-1.6.1.4/
+export PATH=$PATH:$EC2_HOME/bin 
+export JAVA_HOME=/usr
+export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`
 
+if [ -f ~/.mac_zsh ]; then
+    . ~/.mac_zsh
+fi
 
 # Customize to your needs...
 # export PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
@@ -78,7 +89,7 @@ if [[ $platform == 'mac' ]]; then
    # http://tmsh.posterous.com/cd-as-pushd
    # alias cd='. ${HOME}/bin/cd'
    alias pd='popd'
-
+   export DJANGO_SETTINGS_MODULE="scholrly.settings_local"
    export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python"
 
 elif [[ $platform == 'linux' ]]; then
@@ -91,13 +102,21 @@ elif [[ $platform == 'linux' ]]; then
    export WORKON_HOME="/vagrant/vm-py-env"
    export VIRTUALENVWRAPPER_LOG_DIR="/vagrant/vm-py-env"
    export VIRTUALENVWRAPPER_HOOK_DIR="/vagrant/vm-py-env"
-   export DJANGO_SETTINGS_MODULE="neo4django.tests.test_settings"
+   # export DJANGO_SETTINGS_MODULE="neo4django.tests.test_settings"
+   export DJANGO_SETTINGS_MODULE="scholrly.settings_local"
 fi  
 
 
-plugins=(git brew django pip screen sublime vagrant virtualenvwrapper)
+
+plugins=(git brew django pip screen sublime vagrant virtualenvwrapper neo4j mysql.server
+ gem npm rails3)
+setopt extendedglob
 
 source $ZSH/oh-my-zsh.sh
+
+# QSTK
+source QSTK/local.sh
+
 
 # wk() {
 #   cd /vagrant/;
@@ -130,10 +149,23 @@ compdef workon wk
 alias mkve26="mkvirtualenv --python=/usr/bin/python2.6"
 alias mkve27="mkvirtualenv --python=/usr/local/bin/python2.7"
 
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+export WXDIR=/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages/
+export PYTHONPATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PYTHONPATH
+
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
 export PATH=/usr/local/share/python:$PATH
+export PATH=/Users/beard/scikit-learn:$PATH
+export PATH=/usr/local/Cellar/ruby/1.9.3-p194/bin:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
+export PATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PATH
+export PATH=/Users/beard/Dropbox/Engineering/data:$PATH
+# environment=$PATH
 
+# export PYTHONPATH="/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages:$PYTHONPATH"
+# export PYTHONPATH="/usr/local/lib/wxPython/lib/python2.7/site-packages/wx-2.9.4-osx_cocoa/wx:$PYTHONPATH"
+# export PATH=/usr/local/lib/wxPython-2.9.4.0:$PATH
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases

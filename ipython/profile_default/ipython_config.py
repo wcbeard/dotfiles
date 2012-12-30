@@ -381,3 +381,15 @@ c.TerminalInteractiveShell.readline_parse_and_bind = ['tab: complete', '"\\C-l":
 # This will enable completion on elements of lists, results of function calls,
 # etc., but can be unsafe because the code is actually evaluated on TAB.
 # c.IPCompleter.greedy = False
+
+#####
+# Autosave
+#####
+# http://osdir.com/ml/python-ipython-user/2012-03/msg00173.html
+
+def autosave(interval=5):
+    """Autosave the notebook every interval (in minutes)"""
+    from IPython.core.display import Javascript
+    interval *= 60*1000 # JS wants intervals in miliseconds
+    tpl = 'setInterval ( "IPython.notebook.save_notebook()", %i );'
+    return Javascript(tpl % interval)

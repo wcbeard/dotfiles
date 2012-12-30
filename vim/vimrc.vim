@@ -15,7 +15,7 @@ set completeopt=menuone,longest,preview
 " Set font according to system
 "if MySys() == "mac"
 if os == "Darwin"
-	set gfn=Menlo:h16
+	set gfn=Menlo:h14
 	set shell=/bin/bash
 	"set transparency=10 "placed in /Applications/MacVim.app/Contents/Resources/vim/gvimrc
 	"set invmmta "placed in /Applications/MacVim.app/Contents/Resources/vim/gvimrc
@@ -51,6 +51,17 @@ if has('gui_running')
     set guioptions-=T   " Get rid of toolbar "
     set guioptions-=m   " Get rid of menu    "
 endif
+
+" `gf` jumps to the filename under the cursor.  Point at an import statement
+" and jump to it!
+python << EOF
+import os
+import sys
+import vim
+for p in sys.path:
+    if os.path.isdir(p):
+        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
+EOF
 
 "=========C-p,n Fx========
 "Function to toggle whether C-p,n control movements or tab complete in insert mode
