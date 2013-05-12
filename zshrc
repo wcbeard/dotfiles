@@ -40,6 +40,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 export WORKON_HOME="$HOME/py-env"
+export VIRTUALENVWRAPPER_SCRIPT="/usr/local/share/python/virtualenvwrapper.sh"
 export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
 export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
 
@@ -161,6 +162,7 @@ export PATH=/usr/local/Cellar/ruby/1.9.3-p194/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PATH
 export PATH=/Users/beard/Dropbox/Engineering/data:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
 # environment=$PATH
 
 # export PYTHONPATH="/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages:$PYTHONPATH"
@@ -171,6 +173,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Autojump
+[[ -s `brew --prefix`/etc/autojump.zsh ]] && . `brew --prefix`/etc/autojump.zsh
 
 # history handling
 # 
