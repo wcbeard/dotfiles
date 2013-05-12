@@ -112,7 +112,7 @@ endfun
 " endfun
  
  imap jj <Esc>
- set keymap=dvorak 
+ "set keymap=dvorak 
  set nocompatible
  "inoremap <S-Tab> <C-o>j
  set backspace=eol,start,indent
@@ -211,6 +211,7 @@ set ttyfast                   	" we have a fast terminal
 set showcmd
 
 set nohidden  "kill buffer on tab close
+set hidden
 set number
 
 " Backup
