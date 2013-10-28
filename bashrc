@@ -47,6 +47,7 @@ if [[ $platform == 'mac' ]]; then
    # export PYTHONPATH="/usr/local/Cellar/python/2.7.2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:$PYTHONPATH"
    # export PYTHONPATH="/usr/local/Cellar/python/2.7.2/Frameworks/Python.framework/Versions/2.7/lib:$PYTHONPATH"
    # export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+   export PYTHONPATH=/Users/beardc01/src:$PYTHONPATH
    
    # export PATH=${PATH}:/Developer/SDKs/android-sdk-mac_86/tools
 

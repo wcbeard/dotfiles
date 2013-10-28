@@ -134,6 +134,7 @@ endfun
 
  imap jj <Esc>
  set keymap=dvorak
+=======
  "inoremap <S-Tab> <C-o>j
  set backspace=eol,start,indent
 
