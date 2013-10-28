@@ -14,7 +14,7 @@
 	autocrlf = input
 	filemode = false
 [merge]
-	tool = kdiff3
+	tool = vimdiff
 [mergetool "diffmerge"]
 	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = true
