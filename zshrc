@@ -7,18 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Example aliases
-alias zshconfig="subl ~/.zshrc"
-alias slog="cd /Applications/Slogger && ./slogger"
-alias ohmyzsh="subl ~/.oh-my-zsh"
-alias bashconfig="subl ~/.bashrc"
-alias alsconfig="subl ~/.bash_aliases"
 
-alias la="ls -a"
-alias ll="ls -l"
-
-# $ a.txt # will open the file in subl
-alias -s txt=subl
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
