@@ -25,13 +25,6 @@ ZSH_THEME="robbyrussell"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-# http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/SettingUp_CommandLine.html
-export EC2_HOME=/usr/local/ec2-ami-tools-1.4.0.7/
-export EC2_HOME=/usr/local/ec2-api-tools-1.6.1.4/
-export PATH=$PATH:$EC2_HOME/bin
-export JAVA_HOME=/usr
-export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`
-
 export USE_LIBPCRE=yes
 
 if [ -f ~/.mac_zsh ]; then
@@ -62,7 +55,6 @@ if [[ "$unamestr" == 'Darwin' ]]; then
 elif [[ "$unamestr" == 'Linux' ]]; then
    platform='linux'
 fi
-
 if [[ $platform == 'mac' ]]; then
    manp()
    {
@@ -72,22 +64,20 @@ if [[ $platform == 'mac' ]]; then
    # change cd to pushd
    # http://tmsh.posterous.com/cd-as-pushd
    # alias cd='. ${HOME}/bin/cd'
-   alias pd='popd'
    export DJANGO_SETTINGS_MODULE="scholrly.settings_local"
    export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python"
+   export JAVA_HOME=$(/usr/libexec/java_home)
+   export SCALA_HOME=/usr/local/Cellar/scala/2.9.2/libexec
+   export JAVACMD=drip
+   export DRIP_SHUTDOWN=30
+   export SBT_OPTS="-XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:PermSize=128M -XX:MaxPermSize=512M"
+   #autojump
+   [[ -s `brew --prefix`/etc/autojump.zsh ]] && . `brew --prefix`/etc/autojump.zsh
 
 elif [[ $platform == 'linux' ]]; then
-   # alias ls='ls --color=auto'
-# /usr/local/lib/python2.6/dist-packages/neo4django
    alias cd='pushd'
-   alias pd='popd'
-   alias hm='cd /vagrant/'
    alias subl='vim'
-   export WORKON_HOME="/vagrant/vm-py-env"
-   export VIRTUALENVWRAPPER_LOG_DIR="/vagrant/vm-py-env"
-   export VIRTUALENVWRAPPER_HOOK_DIR="/vagrant/vm-py-env"
-   # export DJANGO_SETTINGS_MODULE="neo4django.tests.test_settings"
-   export DJANGO_SETTINGS_MODULE="scholrly.settings_local"
+   alias prc="/var/pricing_share"
 fi
 
 export LESSOPEN="| src-hilite-lesspipe.sh %s"
@@ -96,10 +86,6 @@ export LESS=" -R "
 
 setopt extendedglob
 
-export JAVA_HOME="$(/usr/libexec/java_home)"
-
-#autojump
-[[ -s `brew --prefix`/etc/autojump.zsh ]] && . `brew --prefix`/etc/autojump.zsh
 
 # QSTK
 # source QSTK/local.sh
@@ -144,12 +130,6 @@ export PATH=/Users/beard/Dropbox/Engineering/data:$PATH
 export PATH=/Users/beardc01/src/nbconvert:$PATH
 export PATH=~/src:$PATH
 
-export JAVA_HOME=$(/usr/libexec/java_home)
-export SCALA_HOME=/usr/local/Cellar/scala/2.9.2/libexec
-export JAVACMD=drip
-export DRIP_SHUTDOWN=30
-export SBT_OPTS="-XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:PermSize=128M -XX:MaxPermSize=512M"
-
 export PYTHONDONTWRITEBYTECODE=True
 
 # export PYTHONPATH="/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages:$PYTHONPATH"
@@ -191,9 +171,9 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/local/lib/pkgconfig/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 
-plugins=(git brew django pip screen sublime vagrant virtualenvwrapper neo4j mysql.server
+plugins=(git brew django pip screen sublime vagrant neo4j mysql.server
  gem npm rails3)
-
+#virtualenvwrapper 
 source $ZSH/oh-my-zsh.sh
 
 
