@@ -4,8 +4,25 @@
 let os = substitute(system('uname'), "\n", "", "")
 autocmd VimEnter * echo "Ready to work on" os
 
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'klen/python-mode'
+Bundle 'scrooloose/nerdtree'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'kien/ctrlp.vim'
+
+"execute pathogen#infect()
+"call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
+
+"print "yo"
 
 au FileType python set omnifunc=pythoncomplete#Complete
 filetype plugin indent on
@@ -15,16 +32,18 @@ set completeopt=menuone,longest,preview
 " Set font according to system
 "if MySys() == "mac"
 if os == "Darwin"
-	set gfn=Menlo:h14
+	"set gfn=Meslo:h14
+	set guifont=Meslo\ LG\ S\ for\ Powerline:h14
+	set laststatus=2
 	set shell=/bin/bash
 	"set transparency=10 "placed in /Applications/MacVim.app/Contents/Resources/vim/gvimrc
 	"set invmmta "placed in /Applications/MacVim.app/Contents/Resources/vim/gvimrc
 	" nnoremap ,m :tabnew ~/.vim/plugin/vimacs-0.95.vim<CR>
 	"colorscheme inkpot "placed in /Applications/MacVim.app/Contents/Resources/vim/gvimrc
-	let g:miniBufExplMapWindowNavVim = 1 
-	let g:miniBufExplMapWindowNavArrows = 1 
-	let g:miniBufExplMapCTabSwitchBufs = 1 
-	let g:miniBufExplModSelTarget = 1 
+	let g:miniBufExplMapWindowNavVim = 1
+	let g:miniBufExplMapWindowNavArrows = 1
+	let g:miniBufExplMapCTabSwitchBufs = 1
+	let g:miniBufExplModSelTarget = 1
 	let g:SuperTabDefaultCompletionType = "context"
 
 elseif MySys() == "linux"
@@ -44,7 +63,9 @@ nnoremap ,v :tabnew ~/vimrc.vim<CR>
 set clipboard=unnamed
 nnoremap ,lk :NERDTree<CR>
 nnoremap ,nt :NERDTree<CR>
-nnoremap ,m :MRU<CR>
+map <F2> :NERDTreeToggle<CR>
+"nnoremap ,m :MRU<CR>
+"let mapleader=","
 
 
 if has('gui_running')
@@ -110,13 +131,12 @@ endfun
 "       inoremap <C-p> <C-o>gk
 "       inoremap <C-n> <C-o>gj
 " endfun
- 
+
  imap jj <Esc>
- set keymap=dvorak 
- set nocompatible
+ set keymap=dvorak
  "inoremap <S-Tab> <C-o>j
  set backspace=eol,start,indent
- 
+
 " =====Tab and Line Management=====
 "settings from http://amix.dk/vim/vimrc.html
 "set expandtab   "uses spaces instead of tabs in ins mod
@@ -129,12 +149,16 @@ set lbr
 syn on
 set nolist  " list disables linebreak
 set tw=500
-set si "Smart indent 
+set si "Smart indent
 set wildmode=longest:full "tab-complete does longest instead of 1st
 set wildmenu
 set ruler			" show the cursor position all the time
 set showcmd			" display incomplete commands
 set autochdir
+
+" http://stackoverflow.com/a/7078429/386279
+cmap w!! w !sudo tee > /dev/null %
+
 "========decrease/increase tabstop=======
 " http://www.ibm.com/developerworks/linux/library/l-vim-script-1/index.html
 nmap <silent> ]] :let &tabstop += 1 \| let &shiftwidth +=1<CR>
@@ -147,8 +171,8 @@ if bufwinnr(1)
 endif
 
 "" This sometimes messes stuff up...
-"nnoremap <D-]> <C-W>w
-"nnoremap <D-[> <C-W>W
+"nnoremap <D-]> >>
+"nnoremap <D-[> <<
 
 "========Insert time and date====
 " http://tobym.posterous.com/vim-insert-date-and-time-directly
@@ -169,7 +193,7 @@ nnoremap k gk
 nnoremap gk k
 noremap <S-Enter> O<Esc>
 noremap <CR> o<Esc>
-  
+
 nnoremap - g$
 " get rid of Google docs weird newline
 " nnoremap <Leader>k :%s//\r/g
@@ -205,12 +229,13 @@ set incsearch		" do incremental searching
 set ignorecase
 set smartcase
 set complete=.,w,b,u,U,t,i,d	" do lots of scanning on tab completion
-set ttyfast                   	" we have a fast terminal	
+set ttyfast                   	" we have a fast terminal
 " set guioptions-=e	" Turn off tabs
-"set hlsearch " why doesn't this turn itself off???
+set hlsearch " why doesn't this turn itself off???
 set showcmd
 
-set nohidden  "kill buffer on tab close
+set hidden
+"set nohidden  "kill buffer on tab close
 set number
 
 " Backup
