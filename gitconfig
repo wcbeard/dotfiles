@@ -9,15 +9,31 @@
 	interactive = auto
 	status = auto
 [core]
-	editor = /usr/local/bin/vim
+	editor = /usr/bin/vim
+	excludesfile = /Users/beardc01/src/global_gitignore.txt
+	autocrlf = input
+	filemode = false
 [merge]
-	tool = diffmerge
+	tool = kdiff3
 [mergetool "diffmerge"]
 	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = true
 [mergetool]
 	keepBackup = false
 [diff]
-	tool = diffmerge
+	tool = kdiff3
+	algorithm = patience
+	#external = /usr/bin/vimdiff
+	#external = /Users/beardc01/src/git-twdiff.sh
 [difftool "diffmerge"]
 	cmd = diffmerge $LOCAL $REMOTE
+[alias]
+	root = !pwd
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/twdiff --resume --reverse --wait \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = " "
+	trustExitCode = true
+[push]
+	default = simple
