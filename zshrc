@@ -1,3 +1,4 @@
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -24,20 +25,14 @@ ZSH_THEME="robbyrussell"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-
-export WORKON_HOME="$HOME/py-env"
-export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
-export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
-
 # http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/SettingUp_CommandLine.html
 export EC2_HOME=/usr/local/ec2-ami-tools-1.4.0.7/
 export EC2_HOME=/usr/local/ec2-api-tools-1.6.1.4/
-export PATH=$PATH:$EC2_HOME/bin 
+export PATH=$PATH:$EC2_HOME/bin
 export JAVA_HOME=/usr
 export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`
+
+export USE_LIBPCRE=yes
 
 if [ -f ~/.mac_zsh ]; then
     . ~/.mac_zsh
@@ -93,32 +88,23 @@ elif [[ $platform == 'linux' ]]; then
    export VIRTUALENVWRAPPER_HOOK_DIR="/vagrant/vm-py-env"
    # export DJANGO_SETTINGS_MODULE="neo4django.tests.test_settings"
    export DJANGO_SETTINGS_MODULE="scholrly.settings_local"
-fi  
+fi
+
+export LESSOPEN="| src-hilite-lesspipe.sh %s"
+export LESS=" -R "
 
 
-
-plugins=(git brew django pip screen sublime vagrant virtualenvwrapper neo4j mysql.server
- gem npm rails3)
 setopt extendedglob
 
-source $ZSH/oh-my-zsh.sh
+export JAVA_HOME="$(/usr/libexec/java_home)"
+
+#autojump
+[[ -s `brew --prefix`/etc/autojump.zsh ]] && . `brew --prefix`/etc/autojump.zsh
 
 # QSTK
-source QSTK/local.sh
+# source QSTK/local.sh
 
 
-# wk() {
-#   cd /vagrant/;
-#   cd "$*";
-#   workon "$*";
-# }
-
-wk() {
-  workon "$1" && cd /vagrant/ && cd "$1";
-}
-
-# compdef wk workon
-compdef workon wk
 
 #  ================
 #  ===VIRTUALENV===
@@ -130,27 +116,41 @@ compdef workon wk
 # export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
 # export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python"
 # source /usr/local/share/python/virtualenvwrapper.sh
-# 
+#
 # source $HOME/py-env/src/virtualenvwrapper/virtualenvwrapper.sh
 # alias mkve26="mkvirtualenv --system-site-packages --python=/usr/bin/python2.6"
 # alias mkve27="mkvirtualenv --system-site-packages --python=/usr/local/bin/python2.7"
 
+export WORKON_HOME="$HOME/py-env"
+export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
+export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
+
 alias mkve26="mkvirtualenv --python=/usr/bin/python2.6"
 alias mkve27="mkvirtualenv --python=/usr/local/bin/python2.7"
 
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
-export WXDIR=/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages/
+# export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+export WXDIR=/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages
 export PYTHONPATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PYTHONPATH
+export PYTHONPATH=~/src:$PYTHONPATH
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
-export PATH=/usr/local/share/python:$PATH
+# export PATH=/usr/local/share/python:$PATH
 export PATH=/Users/beard/scikit-learn:$PATH
 export PATH=/usr/local/Cellar/ruby/1.9.3-p194/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PATH
 export PATH=/Users/beard/Dropbox/Engineering/data:$PATH
-# environment=$PATH
+export PATH=/Users/beardc01/src/nbconvert:$PATH
+export PATH=~/src:$PATH
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export SCALA_HOME=/usr/local/Cellar/scala/2.9.2/libexec
+export JAVACMD=drip
+export DRIP_SHUTDOWN=30
+export SBT_OPTS="-XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:PermSize=128M -XX:MaxPermSize=512M"
+
+export PYTHONDONTWRITEBYTECODE=True
 
 # export PYTHONPATH="/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages:$PYTHONPATH"
 # export PYTHONPATH="/usr/local/lib/wxPython/lib/python2.7/site-packages/wx-2.9.4-osx_cocoa/wx:$PYTHONPATH"
@@ -160,9 +160,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# APPDATA=$HOME/.runsnake
+
 
 # history handling
-# 
+#
 # Erase duplicates
 # export HISTCONTROL=erasedups
 # resize history size
@@ -178,9 +180,35 @@ export HISTSIZE=5000
 # PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/local/lib/pkgconfig/
 
+# export PATH=$PATH:/Users/beardc01/src/anaconda/bin
+
 #=========tips to keep in mind====
 # textutil -convert doc /path/to/my/file.docx #to convert text documents
 
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+
+
+plugins=(git brew django pip screen sublime vagrant virtualenvwrapper neo4j mysql.server
+ gem npm rails3)
+
+source $ZSH/oh-my-zsh.sh
+
+
+# wk() {
+#   cd /vagrant/;
+#   cd "$*";
+#   workon "$*";
+# }
+
+wk() {
+  workon "$1" && cd /vagrant/ && cd "$1";
+}
+
+# compdef wk workon
+compdef workon wk
 
 # Setting PATH for Python 3.1
 # The orginal version is saved in .bash_profile.pysave
