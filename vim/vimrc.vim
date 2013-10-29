@@ -10,7 +10,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'klen/python-mode'
@@ -47,6 +46,7 @@ if os == "Darwin"
 	let g:miniBufExplMapCTabSwitchBufs = 1
 	let g:miniBufExplModSelTarget = 1
 	let g:SuperTabDefaultCompletionType = "context"
+   	Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 elseif MySys() == "linux"
 	colorscheme ir_black
