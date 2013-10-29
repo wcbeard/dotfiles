@@ -9,7 +9,7 @@
 	interactive = auto
 	status = auto
 [core]
-	editor = /usr/bin/vim
+	editor = /usr/local/bin/vim
 	excludesfile = /Users/beardc01/src/global_gitignore.txt
 	autocrlf = input
 	filemode = false
