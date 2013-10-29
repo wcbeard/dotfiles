@@ -59,6 +59,10 @@ if [[ $platform == 'mac' ]]; then
    # time that oh-my-zsh is loaded.
    ZSH_THEME="robbyrussell"
 
+   export WORKON_HOME="$HOME/py-env"
+   export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
+   export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
+
 elif [[ $platform == 'linux' ]]; then
    alias cd='pushd'
    alias subl='vim'
@@ -97,16 +101,7 @@ setopt extendedglob
 # alias mkve26="mkvirtualenv --system-site-packages --python=/usr/bin/python2.6"
 # alias mkve27="mkvirtualenv --system-site-packages --python=/usr/local/bin/python2.7"
 
-export WORKON_HOME="$HOME/py-env"
-export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
-export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
-
-alias mkve26="mkvirtualenv --python=/usr/bin/python2.6"
-alias mkve27="mkvirtualenv --python=/usr/local/bin/python2.7"
-
 # export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
-export WXDIR=/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages
-export PYTHONPATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PYTHONPATH
 export PYTHONPATH=~/src:$PYTHONPATH
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
