@@ -1,7 +1,1 @@
-fun! MySys()
-  return "mac"
-endfun
-
-"set runtimepath+=~/Dropbox/vim
-" for plugins folder
 source ~/vimrc.vim

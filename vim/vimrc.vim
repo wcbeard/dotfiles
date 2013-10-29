@@ -1,6 +1,5 @@
 "help from http://amix.dk/blog/post/160
 " space, tab in normal mode
-
 let os = substitute(system('uname'), "\n", "", "")
 autocmd VimEnter * echo "Ready to work on" os
 
@@ -31,7 +30,6 @@ let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
 " Set font according to system
-"if MySys() == "mac"
 if os == "Darwin"
 	"set gfn=Meslo:h14
 	set guifont=Meslo\ LG\ S\ for\ Powerline:h14
@@ -48,10 +46,11 @@ if os == "Darwin"
 	let g:SuperTabDefaultCompletionType = "context"
    	Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
-elseif MySys() == "linux"
+elseif os == "linux"
 	colorscheme ir_black
+	let g:pymode_lint_write = 0
 
-elseif MySys() == "windows"
+elseif has("win32") || has("win16")
 	set langmenu=en_US.UTF-8
 	filetype plugin on
 	set gfn=DejaVu_Sans_Mono:h14 "needs to be backslashed? maybe not
@@ -250,8 +249,8 @@ set ttyfast                   	" we have a fast terminal
 set hlsearch " why doesn't this turn itself off???
 set showcmd
 
-set hidden
-"set nohidden  "kill buffer on tab close
+" set hidden
+set nohidden  "kill buffer on tab close
 set number
 
 " Backup
