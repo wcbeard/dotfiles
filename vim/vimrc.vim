@@ -18,12 +18,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'kien/ctrlp.vim'
 
-"execute pathogen#infect()
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
-
-"print "yo"
-
 au FileType python set omnifunc=pythoncomplete#Complete
 filetype plugin indent on
 let g:SuperTabDefaultCompletionType = "context"
@@ -155,6 +149,7 @@ set wildmenu
 set ruler			" show the cursor position all the time
 set showcmd			" display incomplete commands
 set autochdir
+set wrapscan
 
 " http://stackoverflow.com/a/7078429/386279
 cmap w!! w !sudo tee > /dev/null %
