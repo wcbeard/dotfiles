@@ -66,7 +66,11 @@ elif [[ $platform == 'linux' ]]; then
    alias open="xdg-open"
    ZSH_THEME="wedisagree"
    [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
-
+   export PYENV_ROOT=$HOME/.pyenv
+   export PATH=$PYENV_ROOT/bin:$PATH
+   export PYTHONPATH=/var/pricing_share/repos/src:$PYTHONPATH
+   eval "$(pyenv init -)"
+   eval "pyenv virtualenvwrapper"
 fi
 
 export LESSOPEN="| src-hilite-lesspipe.sh %s"
@@ -115,11 +119,6 @@ export PATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PA
 export PATH=/Users/beard/Dropbox/Engineering/data:$PATH
 export PATH=/Users/beardc01/src/nbconvert:$PATH
 export PATH=~/src:$PATH
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-export PYTHONPATH=/var/pricing_share/repos/src:$PYTHONPATH
-eval "$(pyenv init -)"
-eval "pyenv virtualenvwrapper"
 export PYTHONDONTWRITEBYTECODE=True
 
 # export PYTHONPATH="/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages:$PYTHONPATH"
@@ -163,7 +162,7 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/local/lib/pkgconfig/
 
 plugins=(git brew django pip screen sublime vagrant neo4j mysql.server
  gem npm rails3)
-#virtualenvwrapper 
+#virtualenvwrapper
 source $ZSH/oh-my-zsh.sh
 
 
