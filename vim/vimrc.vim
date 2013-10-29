@@ -17,6 +17,14 @@ Bundle 'klen/python-mode'
 Bundle 'scrooloose/nerdtree'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'godlygeek/tabular'
+"Bundle 'Valloric/YouCompleteMe'
+Bundle 'vim-scripts/tComment'
+"Bundle 'msanders/snipmate.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'Shougo/neocomplcache.vim'
+Bundle 'kana/vim-smartinput'
 
 au FileType python set omnifunc=pythoncomplete#Complete
 filetype plugin indent on
@@ -153,6 +161,8 @@ set wrapscan
 
 " http://stackoverflow.com/a/7078429/386279
 cmap w!! w !sudo tee > /dev/null %
+" cmap e tabnew
+"au BufAdd,BufNewFile * nested tab sball
 
 "========decrease/increase tabstop=======
 " http://www.ibm.com/developerworks/linux/library/l-vim-script-1/index.html
