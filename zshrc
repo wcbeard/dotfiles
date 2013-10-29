@@ -2,13 +2,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
-
-
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -30,20 +23,6 @@ export USE_LIBPCRE=yes
 if [ -f ~/.mac_zsh ]; then
     . ~/.mac_zsh
 fi
-
-# Customize to your needs...
-# export PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
-# Define how Bash prompt looks like:
-#
-# User @ Host – working dir
-#export PS1="\u@\h\w$ "
-#export PS1="\u@\h\w: "
-
-
-
-# #############################
-############ BASHRC ###########
-# #############################
 
 set completion-ignore-case on
 
@@ -74,18 +53,25 @@ if [[ $platform == 'mac' ]]; then
    #autojump
    [[ -s `brew --prefix`/etc/autojump.zsh ]] && . `brew --prefix`/etc/autojump.zsh
 
+   # Set name of the theme to load.
+   # Look in ~/.oh-my-zsh/themes/
+   # Optionally, if you set this to "random", it'll load a random theme each
+   # time that oh-my-zsh is loaded.
+   ZSH_THEME="robbyrussell"
+
 elif [[ $platform == 'linux' ]]; then
    alias cd='pushd'
    alias subl='vim'
    alias prc="/var/pricing_share"
+   alias open="xdg-open"
+   ZSH_THEME="wedisagree"
+   [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
+
 fi
 
 export LESSOPEN="| src-hilite-lesspipe.sh %s"
 export LESS=" -R "
-
-
 setopt extendedglob
-
 
 # QSTK
 # source QSTK/local.sh
@@ -129,7 +115,11 @@ export PATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PA
 export PATH=/Users/beard/Dropbox/Engineering/data:$PATH
 export PATH=/Users/beardc01/src/nbconvert:$PATH
 export PATH=~/src:$PATH
-
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+export PYTHONPATH=/var/pricing_share/repos/src:$PYTHONPATH
+eval "$(pyenv init -)"
+eval "pyenv virtualenvwrapper"
 export PYTHONDONTWRITEBYTECODE=True
 
 # export PYTHONPATH="/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages:$PYTHONPATH"
@@ -146,7 +136,7 @@ fi
 # history handling
 #
 # Erase duplicates
-# export HISTCONTROL=erasedups
+export HISTCONTROL=erasedups
 # resize history size
 export HISTSIZE=5000
 # append to bash_history if Terminal.app quits
