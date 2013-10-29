@@ -105,6 +105,17 @@ fun! Tabnp()
 endif
 endfun
 
+fun! ToggleKeymap()
+	if &keymap!='dvorak'
+		echo "Turning dvorak ON"
+		set keymap=dvorak
+	else
+		echo "Turning dvorak OFF"
+		set keymap=
+	endif
+endfun
+nnoremap ,d :call ToggleKeymap()<CR>
+
 " inoremap <C-p> <C-p>
 " inoremap <C-n> <C-n>
 nnoremap ,t :call Tabnp()<CR>
