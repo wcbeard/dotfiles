@@ -26,6 +26,13 @@ fi
 
 set completion-ignore-case on
 
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+
+plugins=(git brew django pip screen sublime vagrant neo4j mysql.server
+ gem npm rails3)
+
 # http://stackoverflow.com/questions/394230/detect-the-os-from-a-bash-script
 platform='unknown'
 unamestr=`uname`
@@ -34,7 +41,9 @@ if [[ "$unamestr" == 'Darwin' ]]; then
 elif [[ "$unamestr" == 'Linux' ]]; then
    platform='linux'
 fi
+
 if [[ $platform == 'mac' ]]; then
+   plugins+=(virtualenvwrapper)
    manp()
    {
      man -t "${1}" | open -f -a Skim
@@ -149,15 +158,6 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/local/lib/pkgconfig/
 #=========tips to keep in mind====
 # textutil -convert doc /path/to/my/file.docx #to convert text documents
 
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-
-
-plugins=(git brew django pip screen sublime vagrant neo4j mysql.server
- gem npm rails3)
-#virtualenvwrapper
 source $ZSH/oh-my-zsh.sh
 
 
