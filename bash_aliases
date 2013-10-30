@@ -6,6 +6,7 @@ alias slog="cd /Applications/Slogger && ./slogger"
 alias ohmyzsh="subl ~/.oh-my-zsh"
 alias bashconfig="subl ~/.bashrc"
 alias alsconfig="subl ~/.bash_aliases"
+alias vimconfig="subl ~/vimrc.vim"
 
 alias la="ls -a"
 alias ll="ls -l"

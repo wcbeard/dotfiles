@@ -46,8 +46,8 @@ if os == "Darwin"
 	let g:SuperTabDefaultCompletionType = "context"
    	Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
-elseif os == "linux"
-	colorscheme ir_black
+elseif os == "Linux"
+	" colorscheme ir_black
 	let g:pymode_lint_write = 0
 
 elseif has("win32") || has("win16")
@@ -65,6 +65,8 @@ set clipboard=unnamed
 nnoremap ,lk :NERDTree<CR>
 nnoremap ,nt :NERDTree<CR>
 map <F2> :NERDTreeToggle<CR>
+nmap <C-t> :tabnew<CR>
+
 "nnoremap ,m :MRU<CR>
 "let mapleader=","
 
