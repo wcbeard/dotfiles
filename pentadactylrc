@@ -1,3 +1,6 @@
+map -b j 5j
+map -b k 5k
+
 " dactyl://help/hints
 " ;S save field as keyword bookmark
 " :viusage list all commands;==> replaced with :listkeys, listoptions, listcommands
@@ -56,14 +59,14 @@ set editor="emacs -c"
 " {{{ beslayed's pentadactyl configuration with Emacs bindings,  based on anrxc's vimperator configuration with Emacs bindings, but with fairly major changes to the bindings
 "
 " Bindings
-"   
+"
 " source: * http://babbagefiles.blogspot.com
 " (based on: * http://sysphere.org/~anrxc/j/articles/vimperator/index.html)
 "
 " Todo (anrcx's)
 "  * C-n and C-p in "INSERT (menu)" mode
 "    * http://code.google.com/p/vimperator-labs/issues/detail?id=36
-							
+
 " License (both)
 "  * http://creativecommons.org/publicdomain/zero/1.0
 " }}}
@@ -88,7 +91,7 @@ set editor="emacsclient -c"
 
 " {{{ Key bindings
 "     - Emacs GTK key-theme and FF already provide bindings for input fields
-" 
+"
 
 " " C-v was pass-next, remap to bind with default keys
 " map -builtin <C-d> <C-v>
@@ -140,7 +143,7 @@ map -builtin <C-n> 2j
 map -builtin <C-v> <C-d>
 map -builtin <A-v> <C-u>
 
-" Goto the top of the document with M-<			
+" Goto the top of the document with M-<
 map -builtin <A-<> gg
 
 " Goto the end of the document with M->
@@ -154,7 +157,7 @@ map -builtin <C-r> ?
 map -builtin <A-s> *
 map -builtin <A-r> #
 
-" Copy selected text to the clipboard with M-w 
+" Copy selected text to the clipboard with M-w
 map -builtin <A-w> Y
 imap -builtin <A-w> <C-d><C-c><Esc>
 tmap -builtin <A-w> <C-d><C-c><Esc>
@@ -233,7 +236,7 @@ map -builtin <C-x>52 W<CR>
 map -builtin <C-x><C-f> :open<SPACE>
 
 " Open a URL based on current location in the current buffer with C-x C-v
-" ("replace the contents of this buffer with new URL") 
+" ("replace the contents of this buffer with new URL")
 map -builtin <C-x><C-v> O
 
 " Open a URL in a new window with C-x 5 f
@@ -251,8 +254,8 @@ map -builtin <C-x><C-t> :tabopen!<SPACE>
 map -builtin <C-x>4f :tabopen!<SPACE>
 
 " QuickHint mode bindings
-" Follow link using l to open in current buffer 
-" Follow link using L to open in new background tab 
+" Follow link using l to open in current buffer
+" Follow link using L to open in new background tab
 " Follow link using M-l to open in new focussed tab
 " [Alt: Follow link using C-x l to open in new focussed tab]
 " Use neighbouring ; to open extended hint mode (as per standard vimperator)
@@ -299,7 +302,7 @@ map <C-x><C-w> <C-d><C-s>
 " map <C-c>e gF
 " " Open picture location with C-c p
 " map <C-c>p ;i
-" " Open context menu with C-c m 
+" " Open context menu with C-c m
 " map <C-c>m ;c
 " " Open home directory with C-c f
 " map <C-c>f ~
