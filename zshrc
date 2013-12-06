@@ -81,7 +81,10 @@ elif [[ $platform == 'linux' ]]; then
    [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
    export PYENV_ROOT=$HOME/.pyenv
    export PATH=$PYENV_ROOT/bin:$PATH
+   #export PATH=/usr/pgsql-9.3/bin/:$PATH
+   export PATH=/home/beardc01/postgres/bin:$PATH
    export PYTHONPATH=/var/pricing_share/repos/src:$PYTHONPATH
+   export LD_LIBRARY_PATH=/home/beardc01/postgres/lib:$LD_LIBRARY_PATH  #for psycopg
    eval "$(pyenv init -)"
    eval "pyenv virtualenvwrapper"
 fi
