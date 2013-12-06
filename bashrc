@@ -10,9 +10,9 @@ set completion-ignore-case on
 #  ================
 
 # http://j2labs.tumblr.com/post/2904859594/python-2-6-2-7-and-3-1-with-virtualenv
-export WORKON_HOME="$HOME/py-env"
-export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
-export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
+# export WORKON_HOME="$HOME/py-env"
+# export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
+# export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
 
 # 
 # source $HOME/py-env/src/virtualenvwrapper/virtualenvwrapper.sh
@@ -76,11 +76,11 @@ elif [[ $platform == 'linux' ]]; then
 # /usr/local/lib/python2.6/dist-packages/neo4django
    alias cd='pushd'
    alias pd='popd'
-   alias hm='cd /vagrant/'
-   export WORKON_HOME="/vagrant/vm-py-env"
-   export VIRTUALENVWRAPPER_LOG_DIR="/vagrant/vm-py-env"
-   export VIRTUALENVWRAPPER_HOOK_DIR="/vagrant/vm-py-env"
-   export DJANGO_SETTINGS_MODULE="neo4django.tests.test_settings"
+   # alias hm='cd /vagrant/'
+   # export WORKON_HOME="/vagrant/vm-py-env"
+   # export VIRTUALENVWRAPPER_LOG_DIR="/vagrant/vm-py-env"
+   # export VIRTUALENVWRAPPER_HOOK_DIR="/vagrant/vm-py-env"
+   # export DJANGO_SETTINGS_MODULE="neo4django.tests.test_settings"
 fi  
 
 
