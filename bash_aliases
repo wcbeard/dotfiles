@@ -17,6 +17,7 @@ alias -s txt=subl
 alias octave='octave -q'
 alias ipythonq='ipython qtconsole --colors=linux --pylab=inline --InteractiveShellApp.pylab_import_all=False'
 alias ins='ipython notebook --pylab=inline --script --InteractiveShellApp.pylab_import_all=False'
+alias ins3='ipython3 notebook --pylab=inline --script --InteractiveShellApp.pylab_import_all=False'
 # alias ls='ls $LS_OPTIONS -hF' #human readable, append character indicator
 # alias ll='ls $LS_OPTIONS -lhF' 	# long listing format
 # alias l='ls $LS_OPTIONS -lAhF'	# like -a (all) but not the implied . and ..

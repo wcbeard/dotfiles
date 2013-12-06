@@ -31,16 +31,14 @@ set completion-ignore-case on
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 plugins=(git brew django pip screen sublime vagrant neo4j mysql.server
- gem npm rails3)
+ gem npm)
 
-# http://stackoverflow.com/questions/394230/detect-the-os-from-a-bash-script
-platform='unknown'
-unamestr=`uname`
-if [[ "$unamestr" == 'Darwin' ]]; then
-   platform='mac'
-elif [[ "$unamestr" == 'Linux' ]]; then
-   platform='linux'
-fi
+# http://stackoverflow.com/a/394235/386279
+case $OSTYPE in
+  darwin*) platform=mac ;;
+  linux*) platform=linux;;
+  *) platform=other;;
+esac
 
 if [[ $platform == 'mac' ]]; then
    plugins+=(virtualenvwrapper)
@@ -120,6 +118,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
 # export PATH=/usr/local/share/python:$PATH
 export PATH=/Users/beard/scikit-learn:$PATH
+export PATH=~/.cabal/bin:$PATH
 export PATH=/usr/local/Cellar/ruby/1.9.3-p194/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PATH
