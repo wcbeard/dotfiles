@@ -178,6 +178,10 @@ wk() {
   workon "$1" && cd /vagrant/ && cd "$1";
 }
 
+agpy () {
+  ag "$@" **/*.py
+}
+
 # compdef wk workon
 compdef workon wk
 
