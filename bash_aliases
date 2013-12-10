@@ -42,6 +42,7 @@ alias pc="pwd | pbcopy"
 alias pd='popd'
 alias gc="git clone"
 alias hist="tac ~/.zsh_history | sed -E 's/\: [0-9]+\:0;(.+)/\\1/' | less"
+alias gig="vim `git config --global core.excludesfile`"
 
 alias dw="/Volumes/C/Users/beardc01/Desktop/"
 pb="/Volumes/C/Users/beardc01/Desktop/pasteboard.txt"
