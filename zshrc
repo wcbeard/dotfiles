@@ -155,6 +155,11 @@ export HISTSIZE=5000
 # PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/local/lib/pkgconfig/
 
+
+# pycuda
+export CUDA_ROOT=/usr/local/cuda/bin
+export PATH=/usr/local/cuda/bin:$PATH
+
 # export PATH=$PATH:/Users/beardc01/src/anaconda/bin
 
 #=========tips to keep in mind====
