@@ -55,6 +55,8 @@ def copyfile(src, dst, force=False, sym=True, dry=False):
             print 'Overwriting...',
             os.remove(dst)
             copyfunc(src, dst)
+    else:
+        copyfunc(src, dst)
     print '%s %s %s' % (unhome(dst), '@->' if sym else '<-', unhome(src))
 
 
