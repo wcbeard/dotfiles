@@ -33,14 +33,13 @@ def copy_dirs():
 sym_bases = [
     'bashrc', 'bash_aliases', 'bash_profile', 'screenrc', 'vim/vimrc', 'vim/gvimrc',
     'vim/vimrc.vim,vimrc.vim', 'vim', 'dir_colors', 'ipython', 'Vagrantfile,', 'zshrc',
-    'gitconfig', 'pentadactylrc',
+    'gitconfig', 'gitignore,global_gitignore.txt', 'pentadactylrc',
     # 'sublime-text-config,' + st_dir,
     'ghci']
 
 
 def copyfile(src, dst, force=False, sym=True, dry=False):
     "Copy or symlink file"
-    # import ipdb; ipdb.set_trace()
     copyfunc = os.symlink if sym else shutil.copyfile
     if dry:
         copyfunc = lambda *a, **kw: None

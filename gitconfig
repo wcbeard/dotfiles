@@ -10,7 +10,7 @@
 	status = auto
 [core]
 	editor = /usr/local/bin/vim
-	excludesfile = /Users/beardc01/src/global_gitignore.txt
+	excludesfile = ~/global_gitignore.txt
 	autocrlf = input
 	filemode = false
 [merge]
@@ -31,7 +31,7 @@
 	root = !pwd
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/twdiff --resume --reverse --wait \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = " "
 	trustExitCode = true
