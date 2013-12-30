@@ -40,9 +40,10 @@ sym_bases = [
 
 def copyfile(src, dst, force=False, sym=True, dry=False):
     "Copy or symlink file"
-    copyfunc = os.symlink if sym else shutil.copyfile
+    copyfunc = shutil.copytree if os.path.isdir(src) else shutil.copyfile
+    writefunc = os.symlink if sym else copyfunc
     if dry:
-        copyfunc = lambda *a, **kw: None
+        writefunc = lambda *a, **kw: None
     if os.path.exists(dst):
         if not force:
             symrepr = unhome(os.path.realpath(dst))
@@ -53,9 +54,9 @@ def copyfile(src, dst, force=False, sym=True, dry=False):
         else:
             print 'Overwriting...',
             os.remove(dst)
-            copyfunc(src, dst)
+            writefunc(src, dst)
     else:
-        copyfunc(src, dst)
+        writefunc(src, dst)
     print '%s %s %s' % (unhome(dst), '@->' if sym else '<-', unhome(src))
 
 
