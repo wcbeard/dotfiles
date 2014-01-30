@@ -60,6 +60,8 @@ if [[ $platform == 'mac' ]]; then
    #autojump
    [[ -s `brew --prefix`/etc/autojump.zsh ]] && . `brew --prefix`/etc/autojump.zsh
 
+   #brew cask
+   export HOMEBREW_CASK_OPTS="--appdir=/Applications"
    # Set name of the theme to load.
    # Look in ~/.oh-my-zsh/themes/
    # Optionally, if you set this to "random", it'll load a random theme each
