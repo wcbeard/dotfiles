@@ -40,6 +40,8 @@ case $OSTYPE in
   *) platform=other;;
 esac
 
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
 if [[ $platform == 'mac' ]]; then
    plugins+=(virtualenvwrapper)
    manp()
@@ -116,7 +118,6 @@ setopt extendedglob
 # export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 export PYTHONPATH=~/src:$PYTHONPATH
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
 # export PATH=/usr/local/share/python:$PATH
 export PATH=/Users/beard/scikit-learn:$PATH
@@ -186,6 +187,9 @@ agpy () {
 
 # compdef wk workon
 compdef workon wk
+
+# system
+umask 0002 # group write permission
 
 # Setting PATH for Python 3.1
 # The orginal version is saved in .bash_profile.pysave
