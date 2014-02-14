@@ -1,0 +1,8 @@
+ipdb
+jinja2
+tornado
+python-dateutil
+pyparsing
+nose
+Pygments
+virtualenvwrapper

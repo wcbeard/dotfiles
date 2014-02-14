@@ -190,4 +190,5 @@ compdef workon wk
 # Setting PATH for Python 3.1
 # The orginal version is saved in .bash_profile.pysave
 # PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/3.1/bin"
+export TERM=xterm-256color
 export PATH
