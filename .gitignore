@@ -1,2 +1,5 @@
 ipython/profile*
 vim/bundle/*
+**/.DS_Store
+
+**/*.pyc
