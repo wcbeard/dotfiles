@@ -1,0 +1,22 @@
+{
+	"color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
+	"detect_slow_plugins": false,
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "SourceCodePro-Regular",
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
+	"font_size": 14.0,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"AutoPEP8",
+		"Emmet"
+	],
+	"scroll_past_end": true,
+	"tab_size": 4,
+	"theme": "Soda Dark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
