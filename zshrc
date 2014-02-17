@@ -26,6 +26,8 @@ fi
 
 set completion-ignore-case on
 
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -39,8 +41,6 @@ case $OSTYPE in
   linux*) platform=linux;;
   *) platform=other;;
 esac
-
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 if [[ $platform == 'mac' ]]; then
    plugins+=(virtualenvwrapper)
