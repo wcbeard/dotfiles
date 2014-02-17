@@ -1,14 +1,19 @@
 import os
-from os.path import join, basename
-import errno
+from os.path import basename, abspath, join
+# import errno
 import sys
 import argparse
 import shutil
 import glob
+from ConfigParser import SafeConfigParser
+import operator
+import re
 
 
 home = lambda *x: os.path.join(os.path.expanduser('~'), *x)
-here = lambda *x: os.path.join(os.path.abspath('.'), *x)
+expandhome = lambda x: re.sub(r'^~', home(), x)
+files = lambda *x: os.path.join(abspath('files'), *x)
+here = lambda *x: os.path.join(abspath('.'), *x)
 unhome = lambda x: x.replace(home(), '~')
 herehome = lambda src, dst: (here(src), home(dst))
 basenames = lambda fs: set(map(os.path.basename, fs))
@@ -16,8 +21,10 @@ basenames = lambda fs: set(map(os.path.basename, fs))
 mac = 'darwin' in sys.platform
 
 # Sublime Text is an oddball
-st_dir = 'Library/Application Support/Sublime Text 2/Packages/User' if mac else '.config/sublime-text-2'
-# /Users/beard/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings
+st_dir = ('Library/Application Support/Sublime Text 2/Packages/User'
+          if mac else '.config/sublime-text-2')
+# /Users/beard/Library/Application Support/Sublime Text 2
+# /Packages/User/Preferences.sublime-settings
 
 # Files to copy, comma-separated if the symlink will not be dotted version
 # of file in the home directory.
@@ -30,20 +37,27 @@ def copy_dirs():
                    for src in glob.glob(here('services/*'))})
     return dct
 
-sym_bases = [
-    'bashrc', 'bash_aliases', 'bash_profile', 'screenrc', 'vim/vimrc', 'vim/gvimrc',
-    'vim/vimrc.vim,vimrc.vim', 'vim', 'dir_colors', 'ipython', 'Vagrantfile,', 'zshrc',
-    'gitconfig', 'gitignore,global_gitignore.txt', 'pentadactylrc',
-    # 'sublime-text-config,' + st_dir,
-    'ghci']
+# sym_bases = [
+    # 'bashrc', 'bash_aliases', 'bash_profile', 'screenrc', 'vim/vimrc',
+    # 'vim/gvimrc', 'vim/vimrc.vim,vimrc.vim', 'vim', 'dir_colors',
+    # 'ipython', 'Vagrantfile,', 'zshrc', 'gitconfig',
+    # 'gitignore,global_gitignore.txt', 'pentadactylrc',
+    # # 'sublime-text-config,' + st_dir,
+    # 'ghci']
+#
+
+
+def merge(*dcts):
+    return dict(reduce(operator.or_, (d.viewitems() for d in dcts)))
 
 
 def copyfile(src, dst, force=False, sym=True, dry=False):
     "Copy or symlink file"
     copyfunc = os.symlink if sym else shutil.copyfile
+    # import ipdb; ipdb.set_trace()
     if dry:
         copyfunc = lambda *a, **kw: None
-    if os.path.exists(dst):
+    if os.path.lexists(dst):
         if not force:
             symrepr = unhome(os.path.realpath(dst))
             st = ("Not overwriting [{}{}]".format(unhome(dst),
@@ -81,7 +95,7 @@ def perform_writes(src, dst, copy=False, dry=None, force=None, ignores=None):
     if basenames([src, dst]) & set(ignores):
         return 0  # Skip ignores
 
-    if not os.path.exists(src):
+    if not os.path.lexists(src):
         print "File %s doesn't exist!" % src
     else:
         copyfile(src, dst, force=force, dry=dry, sym=not copy)
@@ -102,12 +116,14 @@ def test_sym_names():
 
 
 if __name__ == "__main__":
-    desc = """Create symlinks for files listed in `sym_bases` list, based on sym_names algorithm.
-    If `dry` option is passed, script will (kinda) simulate script without creating symlinks.
-    If `force` option is passed, script will overwrite existing symlinks.
+    desc = """Create symlinks for files listed in `sym_bases` list, based
+    on sym_names algorithm.  If `dry` option is passed, script will (kinda)
+    simulate script without creating symlinks.  If `force` option is passed,
+    script will overwrite existing symlinks.
 
     Current list: %s
-    """ % sym_bases
+    """ % ''
+    # """ % sym_bases
 
     parser = (argparse.ArgumentParser(description=desc,
               formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -128,9 +144,33 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Ensure valid args.ignore_files
-    all_bases = {os.path.basename(base) for commsep in sym_bases for base in commsep.split(',')  # TODO: copy_dirs
-                 if base}
+    # all_bases = {os.path.basename(base) for commsep in sym_bases
+    # for base in commsep.split(',')  # TODO: copy_dirs
+    #              if base}
+
+    config = SafeConfigParser()
+    config.read('syms.conf')
+
+    dotsdir_ = config.get('dirs', 'dotsdir')
+    dotsdir = lambda x: os.path.join(dotsdir_, x)
+
+    # dotfiles
+    dotfiles = {dst: '~/.{}'.format(basename(dst)) for dst in
+                glob.glob(dotsdir('*'))}
+
+    # symlink dirs
+    symdirs = {abspath(dst): src for dst, src in config.items('symdirs')}
+
+    # other
+    other_files = {abspath(files(dst)): src for
+                   dst, src in config.items('dstsrc')}
+
+    sym_args = {abspath(d): expandhome(s) for d, s in
+                merge(dotfiles, symdirs, other_files).items()}
+    all_bases = basenames(sym_args)
+
     extra_ignores = basenames(args.ignore_files) - all_bases
+
     assert not extra_ignores, (
         "Invalid `ignore_file` argument passed: %s" % ', '.join(extra_ignores))
 
@@ -139,34 +179,10 @@ if __name__ == "__main__":
     if args.dry_run:
         print 'Dry run...'
 
-    # import ipdb; ipdb.set_trace()
-    sym_args = [herehome(*sym_names(base)) for base in sym_bases]
-    syms = [perform_writes(src, dst, copy=False) for src, dst in sym_args]
-    copies = [perform_writes(src, dst, copy=True)
-              for src, dst in copy_dirs().items()]
-
-    # copies = [perform_writes(base, copy=True) for base in copy_dirs]
-
-    # processed_bases = [sym_names(b) for b in bases if not
-    #                    (basenames(b.split(',')) & set(args.ignore_files))]
-    # b not in all_bases]
-    # files = [(os.path.join(here, src), os.path.join(home, dst))
-    #          for src, dst in processed_bases]
-    # print files
-
-    # for b in bases:
-    #     if basenames(b.split(',')) & set(args.ignore_files):
-    # continue  # Skip ignores
-    #     _src, _dst = sym_names(b)
-    #     src, dst = here(_src), home(_dst)
-    #     if not os.path.exists(src):
-    #         print "File %s doesn't exist!" % src
-    #     else:
-    #         copyfile(src, dst, force=args.force, dry=args.dry_run)
-
-    # for src, dst in files:
-    #     if not os.path.exists(src):
-    #         print "File %s doesn't exist!" % src
-    #     else:
-    #         copyfile(src, dst, force=args.force, dry=args.dry_run)
-    #         print '%s @-> %s' % (dst, src)
+    # sym_args = [herehome(*sym_names(base)) for base in sym_bases]
+    print sym_args
+    # syms = [perform_writes(src, dst, copy=False) for dst, src in sym_args]
+    syms = [perform_writes(src, dst, copy=False)
+            for src, dst in sym_args.items()]
+    # copies = [perform_writes(src, dst, copy=True)
+    #           for src, dst in copy_dirs().items()]
