@@ -21,8 +21,11 @@ basenames = lambda fs: set(map(os.path.basename, fs))
 mac = 'darwin' in sys.platform
 
 # Sublime Text is an oddball
-st_dir = ('Library/Application Support/Sublime Text 2/Packages/User'
-          if mac else '.config/sublime-text-2')
+st_dirs = (glob.glob(expandhome('~/Library/Application Support/Sublime*')) +
+           ['.config/sublime-text-2'])
+st_dir_ = st_dirs[0]
+st_dir = lambda *x: os.path.join(st_dir_, *x)
+
 # /Users/beard/Library/Application Support/Sublime Text 2
 # /Packages/User/Preferences.sublime-settings
 
@@ -42,7 +45,7 @@ def copy_dirs():
     # 'vim/gvimrc', 'vim/vimrc.vim,vimrc.vim', 'vim', 'dir_colors',
     # 'ipython', 'Vagrantfile,', 'zshrc', 'gitconfig',
     # 'gitignore,global_gitignore.txt', 'pentadactylrc',
-    # # 'sublime-text-config,' + st_dir,
+    # 'sublime-text-config,' + st_dir,
     # 'ghci']
 #
 
@@ -161,12 +164,16 @@ if __name__ == "__main__":
     # symlink dirs
     symdirs = {abspath(dst): src for dst, src in config.items('symdirs')}
 
+    # Sublime text files
+    stfiles = {abspath(files(dst)): st_dir(src)
+               for dst, src in config.items('st')}
+
     # other
     other_files = {abspath(files(dst)): src for
                    dst, src in config.items('dstsrc')}
 
     sym_args = {abspath(d): expandhome(s) for d, s in
-                merge(dotfiles, symdirs, other_files).items()}
+                merge(dotfiles, symdirs, stfiles, other_files).items()}
     all_bases = basenames(sym_args)
 
     extra_ignores = basenames(args.ignore_files) - all_bases
