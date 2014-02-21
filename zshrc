@@ -32,8 +32,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(git brew django pip screen sublime vagrant neo4j mysql.server
- gem npm)
+plugins=(git brew django pip python sublime vagrant neo4j mysql.server postgres
+ gem npm tmux screen vundle)
 
 # http://stackoverflow.com/a/394235/386279
 case $OSTYPE in
@@ -126,7 +126,6 @@ export PATH=/usr/local/Cellar/ruby/1.9.3-p194/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PATH
 export PATH=/Users/beard/Dropbox/Engineering/data:$PATH
-export PATH=/Users/beardc01/src/nbconvert:$PATH
 export PATH=~/src:$PATH
 export PYTHONDONTWRITEBYTECODE=True
 
