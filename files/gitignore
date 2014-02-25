@@ -39,4 +39,6 @@
 */.ropeproject/*
 *.ropeproject/*
 
+*.juliahistory
+
 .ihaskell_capture
