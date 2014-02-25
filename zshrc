@@ -128,7 +128,7 @@ export PATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PA
 export PATH=/Users/beard/Dropbox/Engineering/data:$PATH
 export PATH=~/src:$PATH
 export PYTHONDONTWRITEBYTECODE=True
-
+export PATH=/usr/local/opt/ruby/bin:$PATH
 # export PYTHONPATH="/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages:$PYTHONPATH"
 # export PYTHONPATH="/usr/local/lib/wxPython/lib/python2.7/site-packages/wx-2.9.4-osx_cocoa/wx:$PYTHONPATH"
 # export PATH=/usr/local/lib/wxPython-2.9.4.0:$PATH
