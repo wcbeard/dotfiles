@@ -117,6 +117,7 @@ setopt extendedglob
 
 # export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 export PYTHONPATH=~/src:$PYTHONPATH
+export PYTHONPATH=~/repos/ora_utils:$PYTHONPATH
 
 # https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
 # export PATH=/usr/local/share/python:$PATH
@@ -127,6 +128,7 @@ export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PATH
 export PATH=/Users/beard/Dropbox/Engineering/data:$PATH
 export PATH=~/src:$PATH
+export PATH=~/repos/ora_utils:$PATH
 export PYTHONDONTWRITEBYTECODE=True
 export PATH=/usr/local/opt/ruby/bin:$PATH
 # export PYTHONPATH="/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages:$PYTHONPATH"
