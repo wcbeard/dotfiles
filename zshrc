@@ -135,10 +135,6 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 # export PYTHONPATH="/usr/local/lib/wxPython/lib/python2.7/site-packages/wx-2.9.4-osx_cocoa/wx:$PYTHONPATH"
 # export PATH=/usr/local/lib/wxPython-2.9.4.0:$PATH
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # APPDATA=$HOME/.runsnake
 
 
@@ -171,6 +167,10 @@ export PATH=/usr/local/cuda/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
+# Load after plugins (gc alias conflict)
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # wk() {
 #   cd /vagrant/;
