@@ -21,6 +21,7 @@
 
 *.lnk
 *.bak
+*.text
 
 *.sublime-workspace
 *.sublime-project
