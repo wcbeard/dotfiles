@@ -26,12 +26,14 @@ fi
 
 set completion-ignore-case on
 
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(git brew django pip screen sublime vagrant neo4j mysql.server
- gem npm)
+plugins=(git brew brew-cask django pip python sublime vagrant neo4j mysql.server postgres
+ gem npm bower tmux screen vundle cabal)
 
 # http://stackoverflow.com/a/394235/386279
 case $OSTYPE in
@@ -60,6 +62,8 @@ if [[ $platform == 'mac' ]]; then
    #autojump
    [[ -s `brew --prefix`/etc/autojump.zsh ]] && . `brew --prefix`/etc/autojump.zsh
 
+   #brew cask
+   export HOMEBREW_CASK_OPTS="--appdir=/Applications"
    # Set name of the theme to load.
    # Look in ~/.oh-my-zsh/themes/
    # Optionally, if you set this to "random", it'll load a random theme each
@@ -113,8 +117,8 @@ setopt extendedglob
 
 # export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 export PYTHONPATH=~/src:$PYTHONPATH
+export PYTHONPATH=~/repos/ora_utils:$PYTHONPATH
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
 # export PATH=/usr/local/share/python:$PATH
 export PATH=/Users/beard/scikit-learn:$PATH
@@ -123,17 +127,13 @@ export PATH=/usr/local/Cellar/ruby/1.9.3-p194/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PATH
 export PATH=/Users/beard/Dropbox/Engineering/data:$PATH
-export PATH=/Users/beardc01/src/nbconvert:$PATH
 export PATH=~/src:$PATH
+export PATH=~/repos/ora_utils:$PATH
 export PYTHONDONTWRITEBYTECODE=True
-
+export PATH=/usr/local/opt/ruby/bin:$PATH
 # export PYTHONPATH="/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages:$PYTHONPATH"
 # export PYTHONPATH="/usr/local/lib/wxPython/lib/python2.7/site-packages/wx-2.9.4-osx_cocoa/wx:$PYTHONPATH"
 # export PATH=/usr/local/lib/wxPython-2.9.4.0:$PATH
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 
 # APPDATA=$HOME/.runsnake
 
@@ -153,7 +153,12 @@ export HISTSIZE=5000
 # from http://www.linuxquestions.org/questions/linux-software-2/how-do-i-add-to-the-pkg_config_path-environment-variable-619202/
 # PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/my/additional/config
 # PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
-export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/local/lib/pkgconfig/
+export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
+
+
+# pycuda
+export CUDA_ROOT=/usr/local/cuda/bin
+export PATH=/usr/local/cuda/bin:$PATH
 
 # export PATH=$PATH:/Users/beardc01/src/anaconda/bin
 
@@ -162,6 +167,10 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/local/lib/pkgconfig/
 
 source $ZSH/oh-my-zsh.sh
 
+# Load after plugins (gc alias conflict)
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # wk() {
 #   cd /vagrant/;
@@ -173,10 +182,18 @@ wk() {
   workon "$1" && cd /vagrant/ && cd "$1";
 }
 
+agpy () {
+  ag "$@" **/*.py
+}
+
 # compdef wk workon
 compdef workon wk
+
+# system
+umask 0002 # group write permission
 
 # Setting PATH for Python 3.1
 # The orginal version is saved in .bash_profile.pysave
 # PATH="${PATH}:/Library/Frameworks/Python.framework/Versions/3.1/bin"
+export TERM=xterm-256color
 export PATH

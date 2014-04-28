@@ -14,7 +14,7 @@ set completion-ignore-case on
 # export VIRTUALENVWRAPPER_LOG_DIR="$HOME/py-env"
 # export VIRTUALENVWRAPPER_HOOK_DIR="$HOME/py-env"
 
-# 
+#
 # source $HOME/py-env/src/virtualenvwrapper/virtualenvwrapper.sh
 # alias mkve26="mkvirtualenv --system-site-packages --python=/usr/bin/python2.6"
 # alias mkve27="mkvirtualenv --system-site-packages --python=/usr/local/bin/python2.7"
@@ -34,12 +34,12 @@ if [[ $platform == 'mac' ]]; then
    #  ===AQUATERM===
    #  ==============
    # export GNUTERM='aqua'
-   
+
    #  ===========================
    #  ===HOMEBREW AUTOCOMPLETE===
    #  ===========================
    source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
-   
+
    #  =================
    #  ===PYTHON-PATH===
    #  =================
@@ -48,16 +48,16 @@ if [[ $platform == 'mac' ]]; then
    # export PYTHONPATH="/usr/local/Cellar/python/2.7.2/Frameworks/Python.framework/Versions/2.7/lib:$PYTHONPATH"
    # export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
    export PYTHONPATH=/Users/beardc01/src:$PYTHONPATH
-   
+
    # export PATH=${PATH}:/Developer/SDKs/android-sdk-mac_86/tools
 
    # Something's f'd up
    # export MACOSX_DEPLOYMENT_TARGET=10.6
-   
+
    #  ====================
    #  ===SKIM MAN PAGES===
    #  ====================
-   
+
    manp()
    {
      man -t "${1}" | open -f -a Skim
@@ -65,7 +65,7 @@ if [[ $platform == 'mac' ]]; then
    alias hm='cd ~/Dropbox/Engineering/vagrant/'
    # change cd to pushd
    # http://tmsh.posterous.com/cd-as-pushd
-   alias cd='. ${HOME}/bin/cd'
+   # alias cd='. ${HOME}/bin/cd'
    alias pd='popd'
 
    export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python"
@@ -81,7 +81,7 @@ elif [[ $platform == 'linux' ]]; then
    # export VIRTUALENVWRAPPER_LOG_DIR="/vagrant/vm-py-env"
    # export VIRTUALENVWRAPPER_HOOK_DIR="/vagrant/vm-py-env"
    # export DJANGO_SETTINGS_MODULE="neo4django.tests.test_settings"
-fi  
+fi
 
 
 alias mkve26="mkvirtualenv --python=/usr/bin/python2.6"
@@ -123,9 +123,9 @@ HI="\[\033[0;37m\]" #change this for letter colors
 HII="\[\033[0;31m\]" #change this for letter colors
 SI="\[\033[0;33m\]" #this is for the current directory
 IN="\[\033[0m\]"
- 
+
 # export PS1="$NM[ $HI\u $HII\h $SI\w$NM ] $IN"
- 
+
 # if [ "$TERM" != "dumb" ]; then
 #     export LS_OPTIONS='--color=auto'
 #     eval `dircolors ~/.dir_colors`
@@ -143,7 +143,7 @@ fi
 
 
 # history handling
-# 
+#
 # Erase duplicates
 export HISTCONTROL=erasedups
 # resize history size

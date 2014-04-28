@@ -16,7 +16,7 @@ alias -s txt=subl
 
 alias octave='octave -q'
 alias ipythonq='ipython qtconsole --colors=linux --pylab=inline --InteractiveShellApp.pylab_import_all=False'
-alias ins='ipython notebook --pylab=inline --script --InteractiveShellApp.pylab_import_all=False'
+alias ins='ipython notebook --script'
 alias ins3='ipython3 notebook --pylab=inline --script --InteractiveShellApp.pylab_import_all=False'
 # alias ls='ls $LS_OPTIONS -hF' #human readable, append character indicator
 # alias ll='ls $LS_OPTIONS -lhF' 	# long listing format
@@ -40,8 +40,13 @@ alias dat="cd ~/Dropbox/Engineering/data/"
 alias sp="cd /usr/local/lib/python2.7/site-packages/"
 alias pc="pwd | pbcopy"
 alias pd='popd'
+unalias gc >/dev/null 2>/dev/null
 alias gc="git clone"
+alias gpl="git pull"
+alias pi="pip install"
 alias hist="tac ~/.zsh_history | sed -E 's/\: [0-9]+\:0;(.+)/\\1/' | less"
+alias gig="vim `git config --global core.excludesfile`"
+alias wo="workon"
 
 alias dw="/Volumes/C/Users/beardc01/Desktop/"
 pb="/Volumes/C/Users/beardc01/Desktop/pasteboard.txt"
