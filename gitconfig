@@ -2,7 +2,7 @@
 	name = d10genes
 	email = wcbeard10@gmail.com
 [credential]
-	helper = osxkeychain
+	helper = cache
 [color]
 	branch = auto
 	diff = auto
@@ -10,14 +10,17 @@
 	status = auto
 [core]
 	editor = /usr/local/bin/vim
-	excludesfile = /Users/beardc01/src/global_gitignore.txt
+	excludesfile = ~/src/global_gitignore.txt
 	autocrlf = input
 	filemode = false
 [merge]
-	tool = vimdiff
+	; tool = vimdiff
+	tool = fugitive
 [mergetool "diffmerge"]
 	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = true
+[mergetool "fugitive"]
+	cmd = vim -f -c "Gdiff" "$MERGED"
 [mergetool]
 	keepBackup = false
 [diff]
