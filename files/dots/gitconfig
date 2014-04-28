@@ -10,11 +10,7 @@
 	status = auto
 [core]
 	editor = /usr/local/bin/vim
-<<<<<<< HEAD:gitconfig
-	excludesfile = ~/src/global_gitignore.txt
-=======
 	excludesfile = ~/global_gitignore.txt
->>>>>>> f560b7f5bc6b3c1575182c84270f77d503a7dd7d:files/dots/gitconfig
 	autocrlf = input
 	filemode = false
 [merge]
