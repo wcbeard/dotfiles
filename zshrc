@@ -33,7 +33,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 plugins=(git brew brew-cask django pip python sublime vagrant neo4j mysql.server postgres
- gem npm bower tmux screen vundle cabal)
+ gem npm bower tmux screen vundle cabal docker)
 
 # http://stackoverflow.com/a/394235/386279
 case $OSTYPE in
