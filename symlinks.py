@@ -1,5 +1,5 @@
 import os
-from os.path import basename, abspath, join
+from os.path import basename, abspath, join, dirname
 # import errno
 import sys
 import argparse
@@ -100,6 +100,8 @@ def perform_writes(src, dst, copy=False, dry=None, force=None, ignores=None):
 
     if not os.path.lexists(src):
         print "File %s doesn't exist!" % src
+    elif not os.path.exists(dirname(dst)):
+        print "Directory at %s doesn't exist!" % dst
     else:
         copyfile(src, dst, force=force, dry=dry, sym=not copy)
     return 1
