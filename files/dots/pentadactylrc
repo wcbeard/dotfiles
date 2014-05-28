@@ -7,6 +7,12 @@ map -b k 5k
 
 "2.3.1 (created: 2010/04/07 18:25:13)
 
+"show tab num
+set go+=n
+
+"open popup pinboard bookmarklet w/ keyword 'pop'
+nmap ,p :open pop<CR>
+
 map -count h <count>gT
 map -count l <count><C-n>
 map -builtin <C-h> h
