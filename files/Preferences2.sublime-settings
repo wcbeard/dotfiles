@@ -2,6 +2,7 @@
 	"color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
 	"detect_slow_plugins": false,
 	"ensure_newline_at_eof_on_save": true,
+	// "font_face": "FiraMono-Regular",
 	"font_face": "SourceCodePro-Regular",
 	"font_options":
 	[
