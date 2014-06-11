@@ -55,9 +55,6 @@ if [[ $platform == 'mac' ]]; then
    export DJANGO_SETTINGS_MODULE="scholrly.settings_local"
    export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python"
    export JAVA_HOME=$(/usr/libexec/java_home)
-   export SCALA_HOME=/usr/local/Cellar/scala/2.9.2/libexec
-   export JAVACMD=drip
-   export DRIP_SHUTDOWN=30
    export SBT_OPTS="-XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:PermSize=128M -XX:MaxPermSize=512M"
    #autojump
    [[ -s `brew --prefix`/etc/autojump.zsh ]] && . `brew --prefix`/etc/autojump.zsh
