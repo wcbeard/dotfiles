@@ -44,10 +44,17 @@ unalias gc >/dev/null 2>/dev/null
 alias gc="git clone"
 alias gpl="git pull"
 alias pi="pip install"
+alias pf="pip freeze"
 alias hist="tac ~/.zsh_history | sed -E 's/\: [0-9]+\:0;(.+)/\\1/' | less"
 alias gig="vim `git config --global core.excludesfile`"
 alias wo="workon"
 
+# Cabal
+alias ghc-sandbox="ghc -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
+alias ghci-sandbox="ghci -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
+alias runhaskell-sandbox="runhaskell -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
+
+alias clean="iconv -c -f ISO-8859-1 -t ASCII"
 alias dw="/Volumes/C/Users/beardc01/Desktop/"
 pb="/Volumes/C/Users/beardc01/Desktop/pasteboard.txt"
 alias ipj="ipython notebook --profile julia"
