@@ -33,7 +33,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 plugins=(git brew brew-cask django pip python sublime vagrant neo4j mysql.server postgres
- gem npm bower tmux screen vundle cabal docker)
+ gem npm bower tmux screen vundle cabal docker cp autopep8)
 
 # http://stackoverflow.com/a/394235/386279
 case $OSTYPE in
@@ -144,6 +144,23 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 
 # APPDATA=$HOME/.runsnake
 
+# Cabal sandbox
+function cabal_sandbox_info() {
+    cabal_files=(*.cabal(N))
+    if [ $#cabal_files -gt 0 ]; then
+        if [ -f cabal.sandbox.config ]; then
+            echo "%{$fg[green]%}sandboxed%{$reset_color%}"
+        else
+            echo "%{$fg[red]%}not sandboxed%{$reset_color%}"
+        fi
+    fi
+}
+RPROMPT="\$(cabal_sandbox_info) $RPROMPT"
+
+# Nix
+if [ -e /Users/chrisbeard/.nix-profile/etc/profile.d/nix.sh ]; then
+  . /Users/chrisbeard/.nix-profile/etc/profile.d/nix.sh;
+fi
 
 # history handling
 #
