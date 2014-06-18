@@ -28,6 +28,7 @@ set completion-ignore-case on
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -41,7 +42,6 @@ case $OSTYPE in
   linux*) platform=linux;;
   *) platform=other;;
 esac
-
 if [[ $platform == 'mac' ]]; then
    plugins+=(virtualenvwrapper)
    manp()
@@ -125,16 +125,16 @@ export PYTHONPATH=~/repos/ora_utils:$PYTHONPATH
 
 # https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
 # export PATH=/usr/local/share/python:$PATH
-export PATH=/Users/beard/scikit-learn:$PATH
 export PATH=~/.cabal/bin:$PATH
 export PATH=/usr/local/Cellar/ruby/1.9.3-p194/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
-export PATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PATH
-export PATH=/Users/beard/Dropbox/Engineering/data:$PATH
 export PATH=~/src:$PATH
 export PATH=~/repos/ora_utils:$PATH
 export PYTHONDONTWRITEBYTECODE=True
 export PATH=/usr/local/opt/ruby/bin:$PATH
+# export PATH=$WXDIR:$WXDIR/wx-2.9.4-osx_cocoa:$WXDIR/wx-2.9.1-osx_cocoa/tools:$PATH
+# export PATH=/Users/beard/scikit-learn:$PATH
+# export PATH=/Users/beard/Dropbox/Engineering/data:$PATH
 # export PYTHONPATH="/usr/local/lib/wxPython-2.9.4.0/lib/python2.7/site-packages:$PYTHONPATH"
 # export PYTHONPATH="/usr/local/lib/wxPython/lib/python2.7/site-packages/wx-2.9.4-osx_cocoa/wx:$PYTHONPATH"
 # export PATH=/usr/local/lib/wxPython-2.9.4.0:$PATH
