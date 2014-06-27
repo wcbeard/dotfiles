@@ -12,6 +12,7 @@ set go+=n
 
 "open popup pinboard bookmarklet w/ keyword 'pop'
 nmap ,p :open pop<CR>
+nmap ,r :open read-later<CR>
 
 map -count h <count>gT
 map -count l <count><C-n>
@@ -53,56 +54,6 @@ set hintinputs-=value
 hi -append Hint font-size:13px !important;font-weight:bold !important;background:#fff !important;border:1px solid red !important;color:#000 !important;font-family:monospace !important
 
 
-" set runtimepath=/Users/FingerMan/.vimperator
-" source! /Users/FingerMan/.vimperatorrc.local
-" colorscheme zenburn
-
-" vim: set ft=vimperator:
-
-" Editor, C-e invokes it in text fields
-set editor="emacs -c"
-
-" {{{ beslayed's pentadactyl configuration with Emacs bindings,  based on anrxc's vimperator configuration with Emacs bindings, but with fairly major changes to the bindings
-"
-" Bindings
-"
-" source: * http://babbagefiles.blogspot.com
-" (based on: * http://sysphere.org/~anrxc/j/articles/vimperator/index.html)
-"
-" Todo (anrcx's)
-"  * C-n and C-p in "INSERT (menu)" mode
-"    * http://code.google.com/p/vimperator-labs/issues/detail?id=36
-
-" License (both)
-"  * http://creativecommons.org/publicdomain/zero/1.0
-" }}}
-
-
-" {{{ Options
-"
-
-" " Turn off auto-autocompletion (press tab to see autocompletions)
-" set autocomplete=
-" " determine which tabs open with focus
-" set activate=addons,bookmarks,diverted,extoptions,help,homepage,quickmark
-" " pentadactyl gui options
-"  set go=rbC
-
-" Editor, C-e invokes it in text fields
-set editor="emacsclient -c"
-
-" Show destination links in 1=status line, 2=command line
-" set showstatuslinks=2
-
-
-" {{{ Key bindings
-"     - Emacs GTK key-theme and FF already provide bindings for input fields
-"
-
-" " C-v was pass-next, remap to bind with default keys
-" map -builtin <C-d> <C-v>
-" " M-x enters command mode
-" map -builtin <A-x> :
 
 " Emacs navigation in command line and insert mode
 cmap <C-n> <Tab>
@@ -124,52 +75,13 @@ imap -builtin <C-b> <Left>
 map -builtin <C-f> :forward<CR>
 map -builtin <C-b> :back<CR>
 
-" Use M-f and M-b for buffer/tab browsing
-map -builtin <A-f> :tabnext<CR>
-map -builtin <A-b> :tabprevious<CR>
-
 " Use C-f and C-b to re-order tabs
 map <C-Left> :tabmove! -1<CR>
 map <C-Right> :tabmove! +1<CR>
 
-" Select all ("mark entire buffer or field")
-map -builtin <C-x>h <C-z><C-a><Esc>
-imap -builtin <C-x>h <C-z><C-a><Esc>
-vmap -builtin <C-x>h <C-z><C-a><Esc>
-
-" Use C-a and C-e to go to the absolute left/right of the document
-map -builtin g<C-a> 0
-map -builtin g<C-e> $
-
 " Use C-p and C-n for up/down
 map -builtin <C-p> 2k
 map -builtin <C-n> 2j
-
-" Use C-v and M-v for jump scrolling
-map -builtin <C-v> <C-d>
-map -builtin <A-v> <C-u>
-
-" Goto the top of the document with M-<
-map -builtin <A-<> gg
-
-" Goto the end of the document with M->
-map -builtin <A->> G
-
-" Use C-s and C-r for searching (n/N for next/prev as in less)
-map -builtin <C-s> /
-map -builtin <C-r> ?
-
-" Use M-s and M-r for finding word under cursor
-map -builtin <A-s> *
-map -builtin <A-r> #
-
-" Copy selected text to the clipboard with M-w
-map -builtin <A-w> Y
-imap -builtin <A-w> <C-d><C-c><Esc>
-tmap -builtin <A-w> <C-d><C-c><Esc>
-
-" Copy the current URL to the clipboard with M-w
-map -builtin <A-w> y
 
 " Yank (i.e. paste) the current clipboard selection with C-y
 imap -builtin <C-y> <S-Ins>
@@ -222,102 +134,6 @@ map -builtin <C-x>50 :winclose<CR>
 map -builtin <C-_> :undo<CR>
 map -builtin <C-x>u :undo<CR>
 map -builtin <C-/> :undo<CR>
-
-" Close all other tabs ("delete all other windows") with C-x 1
-map -builtin <C-x>1 :tabonly<CR>
-
-" Close all other windows ("delete all other frames") with C-x 5 1
-map -builtin <C-x>51 :winonly<CR>
-
-" Switch to previously selected tab ("switch cursor to other window") with C-x o
-map -builtin <C-x>o <C-6>
-
-" **** Duplicate tab ("split window") with C-x 2
-map -builtin <C-x>2 T<CR>
-
-" Duplicate window ("split frame") with C-x 5 2
-map -builtin <C-x>52 W<CR>
-
-" Open a URL in the current buffer with C-x C-f
-map -builtin <C-x><C-f> :open<SPACE>
-
-" Open a URL based on current location in the current buffer with C-x C-v
-" ("replace the contents of this buffer with new URL")
-map -builtin <C-x><C-v> O
-
-" Open a URL in a new window with C-x 5 f
-map -builtin <C-x>5f :winopen<SPACE>
-
-" Open a URL in a new background tab with C-x t
-map -builtin <C-x>t :tabopen<SPACE>
-
-" Open a URL based on current location in new background tab with C-x T
-map -builtin <C-x>T T
-
-" Open a URL in a new focussed tab with C-x C-t
-"                                  with C-x 4 f
-map -builtin <C-x><C-t> :tabopen!<SPACE>
-map -builtin <C-x>4f :tabopen!<SPACE>
-
-" QuickHint mode bindings
-" Follow link using l to open in current buffer
-" Follow link using L to open in new background tab
-" Follow link using M-l to open in new focussed tab
-" [Alt: Follow link using C-x l to open in new focussed tab]
-" Use neighbouring ; to open extended hint mode (as per standard vimperator)
-" map -builtin l f
-" map -builtin L F
-" map -builtin <A-l> ;t
-" map -builtin <C-x>l ;t
-
-" Record a key sequence into a macro with C-x (
-map -builtin <C-x>( q
-
-" Play a macro with C-x e
-map -builtin <C-x>e @
-
-" Set a jump-mark at the cursor with C-x r m
-map -builtin <C-x>rm m
-
-" Jump to the jump-mark in the current buffer with C-x r b
-map -builtin <C-x>rb '
-
-" List all jump-marks with C-x r l
-map -builtin <C-x>rl :marks<CR>
-
-" C-x C-w starts the "Save as" dialog
-map <C-x><C-w> <C-d><C-s>
-
-" {{{ Personal key bindings
-"
-" " M-Up/Dn toggles the toolbar and scrollbars
-" map <A-Down> :set go+=BTm<CR>
-" map <A-Up> :set go-=BTm<CR>
-" " " Focus last used input field with C-c i
-" " map <C-c>i gi
-" " Add a bookmark with C-c a (dialog)
-" map <C-c>a <C-d><C-d>
-" " Bookmarks search, and search by tag
-" map <C-c>q :bmarks<SPACE>
-" map <C-c>w :bmarks -tags=
-" " Dialog selection with d
-" map d :dialog<SPACE>
-" " View source with C-c g, and
-" map <C-c>g gf
-" " ... in an editor with C-c e
-" map <C-c>e gF
-" " Open picture location with C-c p
-" map <C-c>p ;i
-" " Open context menu with C-c m
-" map <C-c>m ;c
-" " Open home directory with C-c f
-" map <C-c>f ~
-" " Go to home page with C-c h
-" map -builtin <C-c>h gh
-" " Go to parent directory with C-c u
-" map <C-c>u gu
-" " Go to the root of the website with C-c C-u
-" map <C-c><C-u> gU
 
 " ** Restart with C-c C-r
 map <C-c><C-r> :restart<CR>

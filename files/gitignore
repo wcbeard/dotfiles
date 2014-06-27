@@ -43,3 +43,5 @@
 *.juliahistory
 
 .ihaskell_capture
+*.hi
+*.o
