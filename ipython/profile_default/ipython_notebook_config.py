@@ -25,7 +25,9 @@ def scrub_output_pre_save(model, **kwargs):
 
 
 def post_save(model, os_path, contents_manager):
-    """post-save hook for converting notebooks to .py scripts"""
+    """post-save hook for converting notebooks to .py scripts
+    http://stackoverflow.com/questions/18734739/using-ipython-notebooks-under-version-control
+    """
     if model['type'] != 'notebook':
         return  # only do this for notebooks
     d, fname = os.path.split(os_path)
