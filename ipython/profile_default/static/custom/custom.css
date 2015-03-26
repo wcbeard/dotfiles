@@ -1,0 +1,12 @@
+/*
+Placeholder for custom user CSS
+
+mainly to be overridden in profile/static/custom/custom.css
+
+This will always be an empty file in IPython
+*/
+
+.container { width:100% !important; }
+#notebook { padding-top:0; }
+/*@media #notebook-container.container { width:100%; }*/
+/*#notebook-container.container { width:100% !important; }*/
