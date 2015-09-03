@@ -48,44 +48,7 @@
  * @static
  */
 
-// $([IPython.events]).on("app_initialized.NotebookApp", function () {
-//     $('div#header').hide();
-//     $('div#maintoolbar').hide();
-// });
-
 $([IPython.events]).on("app_initialized.NotebookApp", function () {
-	$('div#header-container').hide();
-	$('div#maintoolbar.navbar').hide();
-	IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-k', function (event) {
-		IPython.notebook.move_cell_up();
-		return false;
-	});
-
-	IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-j', function (event) {
-		IPython.notebook.move_cell_down();
-		return false;
-	});
-
-	// Load and turn on TOC
-	IPython.load_extensions("toc");
-	// $("#toc-wrapper").toggle();
-	// $('#toc_button').click();
-
-	// $.getScript("static/components/codemirror/keymap/vim.js")
-	// IPython.CodeCell.options_default.cm_config["keyMap"] = "vim"
-
+    $('div#header').hide();
+    $('div#maintoolbar').hide();
 });
-
-
-require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
-    function(sublime_keymap, cell, IPython) {
-        // setTimeout(function(){ // uncomment line to fake race-condition
-        cell.Cell.options_default.cm_config.keyMap = 'sublime';
-        var cells = IPython.notebook.get_cells();
-        for(var c=0; c< cells.length ; c++){
-            cells[c].code_mirror.setOption('keyMap', 'sublime');
-        }
-
-        // }, 1000)// uncomment  line to fake race condition
-    }
-);

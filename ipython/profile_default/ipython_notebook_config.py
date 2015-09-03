@@ -1,14 +1,19 @@
 import os
 from subprocess import check_call
+# from shutil import copy
+#     bak_name = fname + '.bak'
+#     copy(fname, bak_name)
 
 if 0:
     get_config = 1
 
 
 def scrub_output_pre_save(model, **kwargs):
+    # def scrub_output_pre_save(model=None, path=None, contents_manager=None, **kwargs):
     """scrub output before saving notebooks
     https://github.com/ipython/ipython/pull/6896#issue-48344492
     """
+
     # only run on notebooks
     if model['type'] != 'notebook':
         return
@@ -17,6 +22,7 @@ def scrub_output_pre_save(model, **kwargs):
         return
 
     model['content']['metadata'].pop('signature', None)
+
     for cell in model['content']['cells']:
         if cell['cell_type'] != 'code':
             continue
