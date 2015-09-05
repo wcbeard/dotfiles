@@ -58,8 +58,8 @@ alias nixs="nix-env -q --installed"
 alias cabalz="cabal exec zsh"
 alias cz="cabal exec zsh"
 alias cl="cabal list --installed"
-alias gsh="nix-shell -p 'ghc.ghc782'"
-
+alias gsh="nix-shell -p 'ghc.ghc783'"
+alias nemacs="nix-shell -p 'ghc.ghc783'; /Applications/Emacs.app/Contents/MacOS/Emacs '$@'"
 
 alias clean="iconv -c -f ISO-8859-1 -t ASCII"
 alias dw="/Volumes/C/Users/beardc01/Desktop/"

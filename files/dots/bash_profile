@@ -8,3 +8,4 @@ test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
 # added by Anaconda 1.5.1 installer
 export PATH="/Users/beardc01/src/anaconda/bin:$PATH"
+if [ -e /Users/williambeard/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/williambeard/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

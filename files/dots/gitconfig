@@ -2,7 +2,7 @@
 	name = d10genes
 	email = wcbeard10@gmail.com
 [credential]
-	helper = cache
+	helper = osxkeychain
 [color]
 	branch = auto
 	diff = auto
