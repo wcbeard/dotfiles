@@ -3,5 +3,5 @@
   // "python_interpreter": "auto",
   "python_interpreter": "/usr/local/bin/python3",
   // /Users/beardc01/py-env/p3k/bin/python
-  "ignore": ["E501", "E121", "E712", "W391"]
+  "ignore": ["E501", "E121", "E712", "W391", "E203", "E241", "E251", "E222", "E125"]
 }
