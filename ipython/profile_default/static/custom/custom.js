@@ -53,29 +53,31 @@
 //     $('div#maintoolbar').hide();
 // });
 
-$([IPython.events]).on("app_initialized.NotebookApp", function () {
-	$('div#header-container').hide();
-	$('div#maintoolbar.navbar').hide();
-	IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-k', function (event) {
-		IPython.notebook.move_cell_up();
-		return false;
-	});
+require(['base/js/namespace', 'base/js/events'], function(IPython, events) {
+    events.on('app_initialized.NotebookApp', function(){
+        IPython.load_extensions("whatever");
 
-	IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-j', function (event) {
-		IPython.notebook.move_cell_down();
-		return false;
-	});
+        $('div#header-container').hide();
+        $('div#maintoolbar.navbar').hide();
+        IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-k', function (event) {
+            IPython.notebook.move_cell_up();
+            return false;
+        });
 
-	// Load and turn on TOC
-	IPython.load_extensions("toc");
-	// $("#toc-wrapper").toggle();
-	// $('#toc_button').click();
+        IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-j', function (event) {
+            IPython.notebook.move_cell_down();
+            return false;
+        });
 
-	// $.getScript("static/components/codemirror/keymap/vim.js")
-	// IPython.CodeCell.options_default.cm_config["keyMap"] = "vim"
+        // Load and turn on TOC
+        IPython.load_extensions("toc");
+        // $("#toc-wrapper").toggle();
+        // $('#toc_button').click();
 
+        // $.getScript("static/components/codemirror/keymap/vim.js")
+        // IPython.CodeCell.options_default.cm_config["keyMap"] = "vim"
+    })
 });
-
 
 require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
     function(sublime_keymap, cell, IPython) {
