@@ -49,6 +49,16 @@ alias hist="tac ~/.zsh_history | sed -E 's/\: [0-9]+\:0;(.+)/\\1/' | less"
 alias gig="vim `git config --global core.excludesfile`"
 alias wo="workon"
 
+alias ca="source activate"
+alias sd="source deactivate"
+alias mkc="conda create --name"
+alias cl="conda list"
+alias ce="conda env"
+
+# Git
+# alias summ="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias summ="git log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s' --decorate --numstat"
+
 # Cabal
 alias ghc-sandbox="ghc -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
 alias ghci-sandbox="ghci -no-user-package-db -package-db .cabal-sandbox/*-packages.conf.d"
@@ -57,7 +67,7 @@ alias nix-search="nix-env -qaP --description '*' | grep"
 alias nixs="nix-env -q --installed"
 alias cabalz="cabal exec zsh"
 alias cz="cabal exec zsh"
-alias cl="cabal list --installed"
+# alias cl="cabal list --installed"
 alias gsh="nix-shell -p 'ghc.ghc782'"
 
 
@@ -65,3 +75,8 @@ alias clean="iconv -c -f ISO-8859-1 -t ASCII"
 alias dw="/Volumes/C/Users/beardc01/Desktop/"
 pb="/Volumes/C/Users/beardc01/Desktop/pasteboard.txt"
 alias ipj="ipython notebook --profile julia"
+
+alias julia="/Applications/Julia-0.3.1.app/Contents/Resources/julia/bin/julia"
+# ln -s /Applications/Julia-0.3.1.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia
+# alias julia="exec '/Applications/Julia-0.3.1.app/Contents/Resources/julia/bin/julia'"
+# alias psc-make=~/repos/scatter/.cabal-sandbox/bin/psc-make
