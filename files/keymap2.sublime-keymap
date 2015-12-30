@@ -1,4 +1,5 @@
 [
+    { "keys": ["super+f"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
     { "keys": ["j", "j"], "command": "exit_insert_mode",
         "context":
         [

@@ -13,7 +13,7 @@ export USE_LIBPCRE=yes
 export LESSOPEN="| src-hilite-lesspipe.sh %s"
 export LESS=" -R "
 
-plugins=(git brew brew-cask django pip python sublime vagrant neo4j mysql.server postgres
+plugins=(git brew pip python sublime vagrant neo4j mysql.server postgres
  gem npm bower tmux screen vundle cabal docker cp autopep8)
 
 # http://stackoverflow.com/a/394235/386279
