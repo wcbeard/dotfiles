@@ -5,24 +5,47 @@ autocmd VimEnter * echo "Ready to work on" os
 
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'klen/python-mode'
-Bundle 'scrooloose/nerdtree'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'godlygeek/tabular'
-"Bundle 'Valloric/YouCompleteMe'
-Bundle 'vim-scripts/tComment'
-"Bundle 'msanders/snipmate.vim'
-Bundle 'SirVer/ultisnips'
-Bundle 'Shougo/neocomplcache.vim'
-Bundle 'kana/vim-smartinput'
+" Bundle 'gmarik/vundle'
+" Bundle 'tpope/vim-fugitive'
+" Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'klen/python-mode'
+" Bundle 'scrooloose/nerdtree'
+" Bundle 'davidhalter/jedi-vim'
+" Bundle 'kien/ctrlp.vim'
+" Bundle 'tpope/vim-surround'
+" Bundle 'godlygeek/tabular'
+" "Bundle 'Valloric/YouCompleteMe'
+" Bundle 'vim-scripts/tComment'
+" "Bundle 'msanders/snipmate.vim'
+" Bundle 'SirVer/ultisnips'
+" Bundle 'Shougo/neocomplcache.vim'
+" Bundle 'kana/vim-smartinput'
+" Bundle 'maverickg/stan.vim'
+
+
+call plug#begin()
+Plug 'maverickg/stan'
+Plug 'gmarik/vundle'
+Plug 'tpope/vim-fugitive'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'klen/python-mode'
+Plug 'scrooloose/nerdtree'
+Plug 'davidhalter/jedi-vim'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
+"Plug 'Valloric/YouCompleteMe'
+Plug 'vim-scripts/tComment'
+"Plug 'msanders/snipmate.vim'
+Plug 'SirVer/ultisnips'
+Plug 'Shougo/neocomplcache.vim'
+Plug 'kana/vim-smartinput'
+Plug 'maverickg/stan.vim'
+call plug#end()
+
 
 au FileType python set omnifunc=pythoncomplete#Complete
 filetype plugin indent on
@@ -44,7 +67,8 @@ if os == "Darwin"
 	let g:miniBufExplMapCTabSwitchBufs = 1
 	let g:miniBufExplModSelTarget = 1
 	let g:SuperTabDefaultCompletionType = "context"
-   	Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+    "Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+   	Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 elseif os == "Linux"
 	" colorscheme ir_black
