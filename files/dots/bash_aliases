@@ -54,6 +54,8 @@ alias sd="source deactivate"
 alias mkc="conda create --name"
 alias cl="conda list"
 alias ce="conda env"
+alias ceu="conda env update"
+alias cec="conda env create"
 
 # Git
 # alias summ="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
@@ -70,13 +72,14 @@ alias cz="cabal exec zsh"
 # alias cl="cabal list --installed"
 alias gsh="nix-shell -p 'ghc.ghc782'"
 
-
+alias busy="cat /dev/urandom | hexdump -C | grep 'ca fe'"
 alias clean="iconv -c -f ISO-8859-1 -t ASCII"
 alias dw="/Volumes/C/Users/beardc01/Desktop/"
 pb="/Volumes/C/Users/beardc01/Desktop/pasteboard.txt"
 alias ipj="ipython notebook --profile julia"
 
-alias julia="/Applications/Julia-0.3.1.app/Contents/Resources/julia/bin/julia"
+alias julia="/Applications/Julia-0.4*/Contents/Resources/julia/bin/julia"
+# alias julia="/Applications/Julia-0.3.1.app/Contents/Resources/julia/bin/julia"
 # ln -s /Applications/Julia-0.3.1.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia
 # alias julia="exec '/Applications/Julia-0.3.1.app/Contents/Resources/julia/bin/julia'"
 # alias psc-make=~/repos/scatter/.cabal-sandbox/bin/psc-make
