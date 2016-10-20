@@ -6,6 +6,7 @@
 
 *.gephi
 *.graphml
+*.gexf
 *.pdf
 *.png
 *.odg
@@ -13,6 +14,8 @@
 *.ods
 *.accdb
 *.csv
+*.ftr
+*.fth
 *.tsv
 *.xlsx
 *.xlsm
@@ -20,6 +23,8 @@
 *.xls
 *.db
 *.zip
+
+*.sqlite
 
 *.lnk
 *.bak
@@ -47,3 +52,5 @@
 .ihaskell_capture
 *.hi
 *.o
+
+.env
