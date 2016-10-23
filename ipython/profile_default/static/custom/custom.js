@@ -53,10 +53,13 @@
 //     $('div#maintoolbar').hide();
 // });
 
-require(['base/js/namespace', 'base/js/events'], function(IPython, events) {
-    events.on('app_initialized.NotebookApp', function(){
-        IPython.load_extensions("whatever");
+// $.map(
+//      IPython.keyboard_manager.command_shortcuts.actions._actions,
+//      function(k,v){return v}
+//      )
 
+require(['base/js/namespace', 'base/js/events'], function(IPython, events) {
+        console.log("derp2");
         $('div#header-container').hide();
         $('div#maintoolbar.navbar').hide();
         IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-k', function (event) {
@@ -76,11 +79,34 @@ require(['base/js/namespace', 'base/js/events'], function(IPython, events) {
 
         // $.getScript("static/components/codemirror/keymap/vim.js")
         // IPython.CodeCell.options_default.cm_config["keyMap"] = "vim"
-    })
+    // events.on('app_initialized.NotebookApp', function(){
+    //     console.log("derp2");
+
+    //     $('div#header-container').hide();
+    //     $('div#maintoolbar.navbar').hide();
+    //     IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-k', function (event) {
+    //         IPython.notebook.move_cell_up();
+    //         return false;
+    //     });
+
+    //     IPython.keyboard_manager.command_shortcuts.add_shortcut('ctrl-j', function (event) {
+    //         IPython.notebook.move_cell_down();
+    //         return false;
+    //     });
+
+    //     // Load and turn on TOC
+    //     IPython.load_extensions("toc");
+    //     // $("#toc-wrapper").toggle();
+    //     // $('#toc_button').click();
+
+    //     // $.getScript("static/components/codemirror/keymap/vim.js")
+    //     // IPython.CodeCell.options_default.cm_config["keyMap"] = "vim"
+    // })
 });
 
 require(["codemirror/keymap/sublime", "notebook/js/cell", "base/js/namespace"],
     function(sublime_keymap, cell, IPython) {
+        console.log("derp");
         // setTimeout(function(){ // uncomment line to fake race-condition
         cell.Cell.options_default.cm_config.keyMap = 'sublime';
         var cells = IPython.notebook.get_cells();

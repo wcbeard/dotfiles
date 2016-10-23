@@ -1,5 +1,11 @@
-ipython/profile*
+#ipython/profile*
+db
+ipython/profile_default/security
+ipython/profile_julia
+ipython/cython
+ipython/profile_foo
 vim/bundle/*
 **/.DS_Store
 
 **/*.pyc
+*.sqlite
