@@ -107,6 +107,9 @@ export PATH=~/.cabal/bin:$PATH
 # system
 umask 0002 # group write permission
 
+# added by Miniconda3 3.19.0 installer
+export PATH="/Users/williambeard/miniconda3/bin:$PATH"
+
 # Rust
 # export DYLD_LIBRARY_PATH='/usr/local/lib'
 export RUST_SRC_PATH=~/src/rust/src
