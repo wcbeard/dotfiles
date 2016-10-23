@@ -69,7 +69,8 @@ if [[ $platform == 'mac' ]]; then
    alias pd='popd'
 
    export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python"
-   source /usr/local/share/python/virtualenvwrapper.sh
+   source /usr/local/bin/virtualenvwrapper.sh
+  #  source /usr/local/share/python/virtualenvwrapper.sh
 
 elif [[ $platform == 'linux' ]]; then
    # alias ls='ls --color=auto'
